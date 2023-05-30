@@ -1,0 +1,36 @@
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.imagen {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+/*Cambiar de color del borde al hacer hover*/
+.imagen:hover {
+    border-color: #E2E8F0;
+}
+
+.galeria-imagen img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.galeria-titulo {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
