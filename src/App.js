@@ -8,6 +8,9 @@ import CrearProducto from './vistas/crearproducto';
 import Header from './partes/Header';
 import RegistroComprador from './vistas/RegistroComprador';
 import RegistroVendedor from './vistas/RegistroVendedor';
+import VistaProducto from './vistas/VistaProducto';
+import './App.css'
+
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -49,6 +52,7 @@ function App() {
                     element={<PantallaInicio isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
                 />
                 <Route path="/crearproducto" element={<CrearProducto />} />
+                <Route path='/VistaProducto' element={<VistaProducto/>} />
 
             </Routes>
         </Router>

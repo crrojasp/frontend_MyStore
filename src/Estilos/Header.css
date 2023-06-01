@@ -1,4 +1,8 @@
 /* Header.css */
+nav{
+    box-shadow: 10px 10px 20px #00000020;
+}
+
 header {
     display: flex;
     justify-content: space-between;
