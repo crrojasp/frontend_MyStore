@@ -46,7 +46,7 @@ const PantallaInicio = () => {
         <div className="pantalla-inicio-container" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <script src="./../partes/VentanaEmergente.js"></script>
             <div className="flex flex-row h-screen">
-            <aside className="bg-purple-300" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexBasis: '30%', flexGrow: 0, maxWidth: '30%', backgroundColor: 'rgb(108, 53, 121)', color: 'white' }}>
+                <aside className="bg-purple-300" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexBasis: '30%', flexGrow: 0, maxWidth: '30%', backgroundColor: 'rgb(108, 53, 121)', color: 'white' }}>
                     <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>LLegó el momento de digitalizarte</h1><br></br><br></br>
                     <a style={{ fontSize: '1.5rem' }}>Crea tu tienda online rápido e invierte en tu negocio.</a><br></br>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
@@ -57,7 +57,7 @@ const PantallaInicio = () => {
                 </aside>
 
                 <main className="bg-white p-4" style={{ flexBasis: '70%', flexGrow: 1, maxWidth: '70%', display: 'flex', flexDirection: 'column' }}>
-                <div className="galeria" style={{ flexWrap: 'wrap', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+                    <div className="galeria" style={{ flexWrap: 'wrap', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                         {productos && productos.length > 0 ? (
                             productos.map((producto) => (
                                 <div key={producto.id} className="producto" onClick={() => handleClick(producto)}>
