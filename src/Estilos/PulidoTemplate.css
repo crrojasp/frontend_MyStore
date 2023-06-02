@@ -63,6 +63,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 105%;
+    height:105%;
     padding: 16px;
     background-color: #f7fafc;
 }

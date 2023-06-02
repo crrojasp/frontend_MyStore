@@ -32,11 +32,12 @@ const TecnologicoTemplate = ({ name, logo, products }) => {
             <header className="tecnologico-template__header">
                 <h1>{name || 'MyStore'}</h1>
             </header>
-
             <main className="tecnologico-template__main">
+                <br></br>
+                <img src={logo || '/logo.png'} alt="Logo" className="tecnologico-template__logo" />
+                <br></br>
                 <div className="tecnologico-template__reviews">
                     <h2>Reseñas</h2>
-
                     <div className="tecnologico-template__review-list">
                         {/* Aquí puedes mostrar las reseñas */}
                     </div>
@@ -53,11 +54,7 @@ const TecnologicoTemplate = ({ name, logo, products }) => {
                         ))}
                     </div>
                 </div>
-
                 <div className="tecnologico-template__products">
-                    <h1>{name || 'MyStore'}</h1>
-                    <img src={logo || '/logo.png'} alt="Logo" className="tecnologico-template__logo" />
-
                     <div className="tecnologico-template__product-grid">
                         {productos && productos.length > 0 ? (
                             productos.map((producto) => (
@@ -79,7 +76,7 @@ const TecnologicoTemplate = ({ name, logo, products }) => {
             </main>
 
             <footer className="tecnologico-template__footer">
-                <h2>About Us</h2>
+                <h2>Sobre nosotros</h2>
             </footer>
         </div>
     );

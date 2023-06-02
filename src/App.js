@@ -13,6 +13,8 @@ import CreacionTienda from './vistas/CreacionTienda';
 import PulidoTemplate from './vistas/PulidoTemplate';
 import RusticoTemplate from './vistas/RusticoTemplate';
 import TecnologicoTemplate from './vistas/TecnologicoTemplate';
+import VistaProducto from './vistas/VistaProducto';
+import './App.css'
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -56,6 +58,7 @@ function App() {
                 <Route path='/PulidoTemplate' element={<PulidoTemplate/>}/>
                 <Route path='/RusticoTemplate' element={<RusticoTemplate/>}/>
                 <Route path='/TecnologicoTemplate' element={<TecnologicoTemplate/>}/>
+                <Route path='/VistaProducto' element={<VistaProducto/>} />
             </Routes>
         </Router>
     );

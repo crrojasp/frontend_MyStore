@@ -78,7 +78,7 @@ const PulidoTemplate = ({ name = "MyStore", logo = "/logo.png", products }) => {
             </main>
 
             <footer className="pulido-template__footer">
-                <h2>About Us</h2>
+                <h2>Sobre nosotros</h2>
             </footer>
         </div>
     );

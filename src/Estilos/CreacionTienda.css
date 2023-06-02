@@ -1,0 +1,92 @@
+#my-store-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#my-store-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#my-store-container form {
+    margin-bottom: 20px;
+}
+
+#my-store-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#my-store-container li {
+    margin-bottom: 10px;
+}
+
+#my-store-container label {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#my-store-container input[type="radio"] {
+    margin-right: 5px;
+}
+
+#my-store-container button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#my-store-container button[type="submit"]:hover {
+    background-color: #a642be;
+}
+
+#my-store-container h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#my-store-container .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#my-store-container .product-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#my-store-container .product-card p {
+    font-size: 14px;
+    color: #777;
+}
+
+#my-store-container .product-card img {
+    width: 40%;
+    max-width: 40px;
+    height: 40%;
+    margin-bottom: 10px;
+}

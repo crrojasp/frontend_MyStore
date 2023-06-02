@@ -101,7 +101,7 @@ const RusticoTemplate = ({ name, logo, products }) => {
                 </div>
             </main>
             <footer className="rustico-template__footer">
-                <h2>About Us</h2>
+                <h2>Sobre nosotros</h2>
             </footer>
         </div>
     );

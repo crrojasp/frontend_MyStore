@@ -21,7 +21,9 @@
 }
 
 .tecnologico-template__products {
-    flex: 0 0 70%;
+    height: 80%;
+    width: 30%;
+    flex: 5% 5% 70%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -29,6 +31,8 @@
 }
 
 .tecnologico-template__product {
+    width: 100%;
+    height:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +48,7 @@
 }
 
 .tecnologico-template__product-image {
-    width: 100%;
+    width: 120%;
     max-width: 200px;
     border-radius: 5px;
 }
