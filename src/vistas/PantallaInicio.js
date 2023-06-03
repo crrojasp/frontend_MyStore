@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Ingreso from './../vistas/Ingreso';
 import VentanaEmergente from './../partes/VentanaEmergente';
-import './../Estilos/Galeria.css';
 import './../Estilos/PantallaInicio.css';
-import Buscador from '../vistas/Buscador';
 import Productos from '../vistas/Productos';
 
 const PantallaInicio = () => {
-
-    const [mostrar, setMostrar] = useState({mostrar : false, producto : {}})
-
-    const noVerProducto = () => setMostrar({mostrar : false , producto : {}})
 
     const handleAbrirVentanaEmergente = () => {
         const ventanaEmergente = <VentanaEmergente />;
@@ -37,7 +31,6 @@ const PantallaInicio = () => {
     return (
         
         <div className="pantalla-inicio-container" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-            <Buscador/>
             <Productos/>
             <script src="./../partes/VentanaEmergente.js"></script>
         </div>

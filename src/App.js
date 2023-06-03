@@ -9,6 +9,7 @@ import Header from './partes/Header';
 import RegistroComprador from './vistas/RegistroComprador';
 import RegistroVendedor from './vistas/RegistroVendedor';
 import VistaProducto from './vistas/VistaProducto';
+import Test from './vistas/Test';
 import './App.css'
 
 
@@ -53,6 +54,7 @@ function App() {
                 />
                 <Route path="/crearproducto" element={<CrearProducto />} />
                 <Route path='/VistaProducto' element={<VistaProducto/>} />
+                <Route path='/Test' element={<Test/>} />
 
             </Routes>
         </Router>

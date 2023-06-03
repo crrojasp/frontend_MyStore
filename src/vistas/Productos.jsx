@@ -3,11 +3,48 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './../Estilos/Galeria.css';
 import VistaProducto from '../vistas/VistaProducto';
+import Buscador from '../vistas/Buscador';
 
+
+function Producto({id,ilustracion,precio,nombre,verProducto}){
+
+    return(
+        <div key={id} className="card-producto" onClick={verProducto}>
+            <img className="imagen-producto" src={`data:image/jpeg;base64,${ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
+            <p className='titulo-producto'>
+                <span className="nombre-producto">{nombre}</span>
+                <span className="precio-producto">{precio}</span>
+            </p>
+        </div>
+    )
+}
 
 function Productos(){
 
     const [productos, setProductos] = useState([]);
+
+    const [busqueda, setBusqueda] = useState('');
+
+    const buscarProducto = (e) => {
+        setBusqueda(e.target.value)
+        console.log(e.target.value)
+    }
+
+    //filtrado de datos
+
+    //let results = []
+
+    /*
+    if(!busqueda)
+    {
+        results = productos
+    }else{
+        results = productos.filter((dato) => 
+        dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
+    }
+    */
+
+    const results = !busqueda ? productos :  productos.filter((dato) => dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
 
     const [mostrar, setMostrar] = useState({mostrar : false, producto : {}})
 
@@ -30,29 +67,19 @@ function Productos(){
 
     return(
         <>
-        {/* <VistaProducto {...mostrar} cerrar={noVerProducto} />*/}
         <p></p>
         <p></p>
-        <section>
-            <div className="galeria">
-                {productos && productos.length > 0 ? (
-                    productos.map((producto) => (
-                        <div key={producto.id} className="card-producto" onClick={() => VerProducto(producto)}>
-                            <Link to="/VistaProducto" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Detalle
-                            </Link>
-                            <img className="imagen-producto" src={`data:image/jpeg;base64,${producto.ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
-                            <p className='titulo-producto'>
-                                <span className="nombre-producto">{producto.nombre}</span>
-                                <span className="precio-producto">{producto.precio}</span>
-                            </p>
-                        </div>
-                    ))
-                ) : (
-                    <p>Cargando productos...</p>
-                )}
-            </div>
-        </section>
+        <Buscador busqueda={busqueda} buscarProducto={buscarProducto}/>
+        <VistaProducto {...mostrar} cerrar={noVerProducto}/>
+            <section>
+                <div className="galeria">
+                    {productos && productos.length > 0 ? (
+                        results.map(producto => <Producto {...producto} verProducto={()=> VerProducto(producto)}/>)
+                    ) : (
+                        <p>Cargando sapo perro productos...</p>
+                    )}
+                </div>
+            </section>
         </>
     )
 }
