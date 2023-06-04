@@ -1,0 +1,72 @@
+/*Cotenedor ingreso*/
+.ingreso-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 30px;
+    width: 350px;
+}
+
+/*Titulo formulario ingreso*/
+.ingreso-container h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+/*Formulario de ingreso*/
+.ingreso-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*Etiqueta del campo*/
+.ingreso-container label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/*Campos de entrada*/
+.ingreso-container input[type="email"],
+.ingreso-container input[type="password"] {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+}
+
+/*Botón para enviar*/
+.ingreso-container button[type="submit"] {
+    background-color: #0095f6;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+/*Cambiar color al ejecutar el hover*/
+.ingreso-container button[type="submit"]:hover {
+    background-color: #0072bb;
+}
+
+/*Mensaje de error en caso de que halla un error*/
+.ingreso-container .error {
+    color: #ed4956;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
