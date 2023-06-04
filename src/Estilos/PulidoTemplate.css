@@ -1,0 +1,119 @@
+.pulido-template {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.pulido-template__header {
+    height: 10%;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulido-template__main {
+    flex-grow: 1;
+    display: flex;
+}
+
+.pulido-template__reviews {
+    width: 30%;
+    background-color: #f7fafc;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pulido-template__review-list {
+    height: 80%;
+    width: 80%;
+    overflow-y: auto;
+}
+
+.pulido-template__rating {
+    height: 20%;
+    width: 80%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* Estilos para las estrellas de calificación */
+}
+
+.pulido-template__products {
+    flex-grow: 1;
+    background-color: #fff;
+    color: #222;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pulido-template__product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.pulido-template__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 105%;
+    height:105%;
+    padding: 16px;
+    background-color: #f7fafc;
+}
+
+.pulido-template__product-image {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.pulido-template__product-name {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pulido-template__product-price {
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.pulido-template__footer {
+    height: 20%;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulido-template__rating {
+    /* Estilos para la barra de calificación */
+    margin-top: 16px;
+}
+
+.pulido-template__stars {
+    display: flex;
+    justify-content: center;
+}
+
+.pulido-template__star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.pulido-template__star--filled {
+    color: gold;
+}
+
+.pulido-template__logo {
+    max-width: 200px;
+    max-height: 100px;
+}

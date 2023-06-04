@@ -1,0 +1,31 @@
+.option-button {
+    background-color: #622870;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease-in-out;
+    font-family: Arial, sans-serif;
+    /* Estilo de letra personalizado */
+  }
+  
+  .option-button.selected {
+    background-color: #ffffff;
+    color: #622870;
+    box-shadow: 0px 0px 10px 3px rgba(98, 40, 112, 0.4);
+  }
+  
+  .flex {
+    justify-content: space-between;
+    display: flex;
+    /* Agregamos esta línea para activar el flexbox */
+    align-items: center;
+    /* Alineación vertical de los elementos */
+  }
+  
+  .form-buttons {
+    text-align: center;
+    /* Alineación horizontal de los elementos */
+  }

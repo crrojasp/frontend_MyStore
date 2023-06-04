@@ -1,0 +1,99 @@
+.tecnologico-template {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tecnologico-template__header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .tecnologico-template__main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .tecnologico-template__logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .tecnologico-template__sidebar {
+    margin-right: 20px;
+  }
+  
+  .tecnologico-template__review-list {
+    margin-bottom: 20px;
+  }
+  
+  .tecnologico-template__review {
+    margin-bottom: 10px;
+  }
+  
+  .tecnologico-template__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .tecnologico-template__star {
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .tecnologico-template__star--filled {
+    color: #ffcc00;
+  }
+  
+  .tecnologico-template__content {
+    flex-grow: 1;
+  }
+  
+  .tecnologico-template__products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .tecnologico-template__product {
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .tecnologico-template__product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .tecnologico-template__product-name {
+    margin-bottom: 5px;
+  }
+  
+  .tecnologico-template__product-price {
+    color: #666;
+  }
+  
+  .tecnologico-template__footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }  
