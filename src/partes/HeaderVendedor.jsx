@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Estilos/Header.css';
 
-const Header = () => {
+const HeaderVendedor = () => {
   return (
     <header className="flex justify-between items-center" style={{ backgroundColor: 'rgb(108, 53, 121)' }}>
       <div className="flex items-center gap-10 flex-grow">
@@ -23,8 +23,8 @@ const Header = () => {
           <Link to="/" className="nav-link">
             Aprende
           </Link>
-          <Link to="/ingreso" className="nav-link">
-            Ingresar
+          <Link to="/Perfil" className="nav-link">
+            Mostrar perfil
           </Link>
           <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Crear Tienda
@@ -35,4 +35,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderVendedor;

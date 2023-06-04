@@ -40,13 +40,33 @@ const RusticoTemplate = ({ name, logo, products }) => {
     };
 
     return (
-        <div className="rustico-template full-width">
+        <div className="rustico-template">
             <header className="rustico-template__header">
-                <h1>{name || 'MyStore'}</h1>
+                <h1>{name || 'MyStore Name'}</h1>
             </header>
 
-            <main className="rustico-template__main">
-                <div className="rustico-template__sidebar">
+            <div className="rustico-template__product-list">
+                <div className="rustico-template__product-grid">
+                    {productos && productos.length > 0 ? (
+                        productos.map((producto) => (
+                            <div key={producto.id} className="rustico-template__product" onClick={() => handleClick(producto)}>
+                                <img
+                                    className="rustico-template__product-image"
+                                    src={`data:image/jpeg;base64,${producto.ilustracion}`}
+                                    alt="Imagen del producto"
+                                />
+                                <h2 className="rustico-template__product-name">{producto.nombre}</h2>
+                                <p className="rustico-template__product-price">${producto.precio}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Cargando productos...</p>
+                    )}
+                </div>
+            </div>
+
+            <div className="rustico-template__sidebar">
+                <div className="rustico-template__reviews">
                     <h2>Reseñas</h2>
 
                     <div className="rustico-template__review-list">
@@ -61,47 +81,24 @@ const RusticoTemplate = ({ name, logo, products }) => {
                             <p>No hay reseñas disponibles</p>
                         )}
                     </div>
-
-                    <div className="rustico-template__rating">
-                        {[...Array(5)].map((_, index) => (
-                            <span
-                                key={index}
-                                className={`rustico-template__star ${index < rating ? 'rustico-template__star--filled' : ''}`}
-                                onClick={() => handleRatingChange(index + 1)}
-                            >
-                                &#9733;
-                            </span>
-                        ))}
-                    </div>
                 </div>
 
-                <div className="rustico-template__content">
-                    <div className="rustico-template__products">
-                        <h1>{name || 'MyStore'}</h1>
-                        <img src={logo || '/logo.png'} alt="Logo" className="rustico-template__logo" />
-
-                        <div className="rustico-template__product-grid">
-                            {productos && productos.length > 0 ? (
-                                productos.map((producto) => (
-                                    <div key={producto.id} className="rustico-template__product" onClick={() => handleClick(producto)}>
-                                        <img
-                                            className="rustico-template__product-image"
-                                            src={`data:image/jpeg;base64,${producto.ilustracion}`}
-                                            alt="Imagen del producto"
-                                        />
-                                        <h2 className="rustico-template__product-name">{producto.nombre}</h2>
-                                        <p className="rustico-template__product-price">${producto.precio}</p>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>Cargando productos...</p>
-                            )}
-                        </div>
-                    </div>
+                <div className="rustico-template__rating">
+                    <h2>Valoración</h2>
+                    {[...Array(5)].map((_, index) => (
+                        <span
+                            key={index}
+                            className={`rustico-template__star ${index < rating ? 'rustico-template__star--filled' : ''}`}
+                            onClick={() => handleRatingChange(index + 1)}
+                        >
+                            &#9733;
+                        </span>
+                    ))}
                 </div>
-            </main>
+            </div>
+
             <footer className="rustico-template__footer">
-                <h2>Sobre nosotros</h2>
+                <h2>Footer del estilo</h2>
             </footer>
         </div>
     );

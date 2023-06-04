@@ -29,8 +29,8 @@ const RegistroVendedor = () => {
     let response = null;
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        const errors = validate(formData);
+        // event.preventDefault();
+        // const errors = validate(formData);
         if (Object.keys(errors).length === 0) {
             try {
                 console.log("Datos enviados:", {
@@ -48,22 +48,31 @@ const RegistroVendedor = () => {
                         nombre: formData.name,
                     },
                 });
-                response = await axios.post('http://127.0.0.1:8888/registro_vendedor', {
+                const response = await axios.post('http://127.0.0.1:8888/registro_vendedor', {
                     user: {
                         name: formData.name,
                         email: formData.email,
                         password: formData.password,
-                        tipo: "vendedor",  // Establece el tipo como "vendedor"
+                        tipo: "vendedor",
                         cellphone: formData.cellphone,
                     },
                     vendedor: {
-                        nombre_tienda: formData.nombre_tienda,  // Ajusta los valores según tus necesidades
-                        rues: formData.rues,  // Ajusta los valores según tus necesidades
-                        historial_ventas: "",  // Ajusta los valores según tus necesidades
-                        nombre: formData.name,  // Ajusta los valores según tus necesidades
+                        nombre_tienda: formData.nombre_tienda,
+                        rues: formData.rues,
+                        historial_ventas: "",
+                        nombre: formData.name,
                     },
                 });
-                console.log(response.data);
+                console.log("Respuesta del servidor:", response.data);
+                // Utiliza la respuesta según sea necesario en tu aplicación
+                // Por ejemplo, si el servidor devuelve un mensaje de éxito:
+                if (response.data.message === "Registro exitoso") {
+                    console.log("Registro exitoso");
+                    // Realiza las acciones apropiadas después del registro exitoso
+                } else {
+                    console.log("Error al registrar el usuario");
+                    // Realiza las acciones apropiadas en caso de error
+                }
             } catch (error) {
                 console.error(error);
                 console.log('Ocurrió un error al registrar el usuario');
@@ -71,7 +80,7 @@ const RegistroVendedor = () => {
         } else {
             setErrors(errors);
         }
-    };
+    };    
 
     const validate = (values) => {
         const errors = {};
@@ -188,5 +197,4 @@ const RegistroVendedor = () => {
 
     );
 };
-
 export default RegistroVendedor;
