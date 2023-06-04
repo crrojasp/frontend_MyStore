@@ -1,6 +1,6 @@
 import React from 'react';
 import './../Estilos/Preguntas.css';
-
+import suma from '../vistas/images/suma.svg';
 const Preguntas = () => {
     return(
         <body>
@@ -22,6 +22,38 @@ const Preguntas = () => {
                     </div>
                     <div class="categoria" data-categoria="cuenta">
                     <svg viewBox='0 0 24 24' xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M9.484 15.696l-.711-.696-2.552 2.607-1.539-1.452-.698.709 2.25 2.136 3.25-3.304zm0-5l-.711-.696-2.552 2.607-1.539-1.452-.698.709 2.25 2.136 3.25-3.304zm0-5l-.711-.696-2.552 2.607-1.539-1.452-.698.709 2.25 2.136 3.25-3.304zm10.516 11.304h-8v1h8v-1zm0-5h-8v1h8v-1zm0-5h-8v1h8v-1zm4-5h-24v20h24v-20zm-1 19h-22v-18h22v18z"/></svg>                    <p>Cuenta</p>
+                    </div>
+                </div>
+
+                <div className='preguntas'>
+                    <div className='contenedor-preguntas activo' data-categoria='metodos-pago'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Cuáles son los métodos de pago disponibles? 
+                            <img src={suma} alt="suma"/>
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Se aceptan tarjetas de crédito y débito? 
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Necesito cuenta de PSE para pagar? 
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>
