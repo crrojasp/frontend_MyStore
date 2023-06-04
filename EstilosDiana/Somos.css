@@ -4,6 +4,7 @@
   gap: 10px;
   padding: 40px;
   background-color: #f5f5f5;
+  align-items: center;
 }
 
 .Ourteam{
@@ -22,7 +23,7 @@
 
 .Diana {
   width: 200px;
-  height: 400px;
+  height: 300px;
   padding: 20px;
   text-align: center;
   margin: 10px;
@@ -59,7 +60,7 @@
 }
 .Diana:hover{
   width: 210px;
-  height: 410px;
+  height: 310px;
 }
 .Cristian:hover{
   width: 210px;
