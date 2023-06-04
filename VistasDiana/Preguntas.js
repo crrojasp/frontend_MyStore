@@ -54,6 +54,53 @@ const Preguntas = () => {
                                 equisde
                             </p>
                         </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Sirve mercado pago y paypal? 
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                    </div>
+                    <div className='contenedor-preguntas activo' data-categoria='entregas'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Cuál es el tiempo de entrega?
+                            <img src={suma} alt="suma"/>
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Qué hago si llevo 30 días y mi pedido no ha llegado? 
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Qué hago si se extiende el tiempo del pedido sin mi autorización?
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                               ¿Qué hago si mi pedido está dañado? 
+                            <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>
