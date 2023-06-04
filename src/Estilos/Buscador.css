@@ -1,0 +1,53 @@
+.titulo{
+    font-size: 36px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    padding-top: 20px;
+}
+
+.container-buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 0;
+    width: 850px;
+}
+
+.input-buscar{
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius:  10px;
+    padding: 12px;
+    flex: 4;
+    font-size: 16px;
+    box-shadow: 4px 4px 16px #00000020;
+    width: 650px;
+}
+
+.btn-buscar{
+    background-color:blueviolet;
+    color:#f2f2f2;
+    border-radius: 16px;
+    padding: 12px;
+    border: none;
+    box-shadow: 4px 4px 16px #00000020; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+.btn-buscar > svg {
+    fill: #f2f2f2;
+}
+
+.btn-buscar:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}

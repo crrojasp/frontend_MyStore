@@ -1,0 +1,132 @@
+/* Header.css */
+nav{
+    box-shadow: 10px 10px 20px #00000020;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(108, 53, 121);
+    box-shadow: 10px 10px 20px #00000020;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    max-width: 1530px;
+}
+
+/*Modificacion imagen*/
+header img {
+    width: 48px;
+    height: 48px;
+}
+
+/*Modificacion elementos de navegacion del header*/
+header nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+header nav a {
+    color: white;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .relative {
+    position: relative;
+}
+
+header nav .relative button {
+    outline: none;
+}
+
+header nav .relative button>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #3182ce;
+    color: white;
+}
+
+header nav .absolute {
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    width: 192px;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header nav .absolute div[role="menu"] {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+header nav .absolute div[role="menu"] a {
+    display: block;
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+    text-align: left;
+}
+
+header nav .absolute div[role="menu"] a:hover {
+    background-color: #f7fafc;
+    color: #1a202c;
+}
+
+header .bg-blue-500 {
+    background-color: #3182ce;
+}
+
+header .bg-blue-500:hover {
+    background-color: #1a4d8b;
+}
+
+header .carrito{
+    position: absolute;
+    cursor: pointer;
+    top : 1rem;
+    right: 11.2rem;
+    
+}header .carrito box-icon{
+    width: 25px;
+    height: 25px;    
+}
+header .carrito span{
+    position: absolute;
+    top : -0.8rem;
+    right: -1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+    padding: 0rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: red;
+}
+
+
+/*----Responsive----*/
+@media only screen and (max-width: 600px){
+    header .relative{
+        display: none;
+    }
+}
