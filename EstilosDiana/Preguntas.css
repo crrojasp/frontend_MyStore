@@ -1,6 +1,7 @@
+/*Archivo raíz pa acceder al raiz, funciones*/
 :root {
-	--primario: #e23939;
-	--gris-claro: #B8B8B8;
+	--primer:  rgb(108, 53, 121);
+	--gris: #a09d9d;
 	--sombra: 0 0 13px 0 rgba(185,185,185, .25);
 }
 
@@ -12,7 +13,7 @@
 
 body {
 	background: #f8fafb;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Comfortaa', cursive;
 }
 
 main {
@@ -22,15 +23,13 @@ main {
 }
 
 .titulo {
-	color: #3a3a3a;
+	color: rgb(108, 53, 121);
+	font-size: 25px;
 	font-weight: 700;
 	text-align: center;
-	margin: 60px 0;
+	margin: 70px 0;
 }
 
-/*! =================================================*/
-/*! ============= Categorias ============= */
-/*! =================================================*/
 .categorias {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -42,21 +41,21 @@ main {
 	cursor: pointer;
 	text-align: center;
 	padding: 20px;
-	border-radius: 10px;
+	border-radius: 20px;
 	background: #fff;
 	font-weight: 700;
-	color: var(--gris-claro);
+	color: var(--gris);
 	border: 2px solid transparent;
 	transition: .3s ease all;
 }
 
 .categoria:hover {
 	box-shadow: var(--sombra);
-	color: #000;
+	color: rgb(108, 53, 121);
 }
-
+/*Modificar el svg*/
 .categoria:hover path {
-	fill: var(--primario);
+	fill: var(--primer);
 }
 
 .categoria svg {
@@ -65,17 +64,17 @@ main {
 }
 
 .categoria path {
-	fill: var(--gris-claro);
+	fill: var(--gris);
 	transition: .3s ease all;
 }
 
 .categoria.activa {
-	border: 2px solid var(--primario);
+	border: 3px solid var(--primer);
 	color: #000;
 }
 
 .categoria.activa path {
-	fill: var(--primario);
+	fill: var(--primer);
 }
 
 /*! =================================================*/
@@ -84,7 +83,7 @@ main {
 .contenedor-preguntas {
 	display: none;
 	grid-template-columns: 1fr;
-	gap: 40px;
+	gap: 20px;
 }
 
 .contenedor-preguntas.activo {
@@ -95,7 +94,7 @@ main {
 	background: #fff;
 	padding: 40px;
 	border: 2px solid transparent;
-	border-radius: 10px;
+	border-radius: 15px;
 	overflow: hidden;
 	transition: .3s ease all;
 	cursor: pointer;
@@ -106,7 +105,7 @@ main {
 }
 
 .contenedor-pregunta.activa {
-	border: 2px solid var(--primario);
+	border: 2px solid var(--primer);
 }
 
 /*! =================================================*/
@@ -114,15 +113,16 @@ main {
 /*! =================================================*/
 .pregunta {
 	font-weight: 700;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 15px;
+	line-height: 15px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	color: rgb(108, 53, 121);
 }
 
 .pregunta img {
-	width: 14px;
+	width: 10px;
 }
 
 .respuesta {
@@ -155,7 +155,7 @@ main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 5px;
+		border-radius: 7px;
 	}
 
 	.categoria svg {
