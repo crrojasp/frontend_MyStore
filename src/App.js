@@ -10,7 +10,9 @@ import RegistroComprador from './vistas/RegistroComprador';
 import RegistroVendedor from './vistas/RegistroVendedor';
 import VistaProducto from './vistas/VistaProducto';
 import Test from './vistas/Test';
+import Carrito from './vistas/Carrito';
 import './App.css'
+import 'boxicons';
 
 
 function App() {

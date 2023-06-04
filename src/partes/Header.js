@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Estilos/Header.css'
+import '../Estilos/Header.css';
+import 'boxicons';
 const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
     const [showMenu, setShowMenu] = useState(false);
 
@@ -94,6 +95,11 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
                             Ingresar
                         </Link>
                     )}
+
+                    <div className='carrito'>
+                        <box-icon name="cart"></box-icon>
+                        <span className="items-carrito">0</span>
+                    </div>
 
                     <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Crear Tienda
