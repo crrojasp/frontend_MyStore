@@ -105,7 +105,7 @@ const RegistroVendedor = () => {
         <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden md:max-w-lg">
             <div className="container">
                 <h1 className="title font-bold text-center mb-5">
-                    Registro
+                    Registro para vendedor 
                 </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
@@ -182,8 +182,10 @@ const RegistroVendedor = () => {
                         </button>
                     </div>
                 </form>
+
             </div>
         </div>
+
     );
 };
 

@@ -6,25 +6,25 @@ import VistaProducto from '../vistas/VistaProducto';
 import Buscador from '../vistas/Buscador';
 
 
-export function Producto({ id, ilustracion, precio, nombre }) {
+export function Producto({id,ilustracion,precio,nombre}){
 
-    return (
+    return(
         <Link to='/VistaProducto'>
             <div key={id} className="card-producto">
                 <img className="imagen-producto" src={`data:image/jpeg;base64,${ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
                 <div className="footer_producto">
                     <h1 className="nombre-producto">{nombre}</h1>
-                    <p className="precio-producto">{`PRECIO: $${precio}`}</p>
+                    <p className="precio-producto">{`PRECIO: $${precio}`}</p>       
                 </div>
                 <div className="boton_carrito">
                     <button className='btn_carrito'>Añadir al carrito</button>
                 </div>
             </div>
-        </Link>
+        </Link>   
     )
 }
 
-function Productos() {
+function Productos(){
 
     const [productos, setProductos] = useState([]);
 
@@ -35,13 +35,13 @@ function Productos() {
     }
 
     //filtrado de datos
-    const results = !busqueda ? productos : productos.filter((dato) => dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
+    const results = !busqueda ? productos :  productos.filter((dato) => dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
 
-    const [mostrar, setMostrar] = useState({ mostrar: false, producto: {} })
+    const [mostrar, setMostrar] = useState({mostrar : false, producto : {}})
 
-    const VerProducto = (producto) => setMostrar({ mostrar: true, producto })
+    const VerProducto = (producto) => setMostrar({mostrar : true , producto })
 
-    const noVerProducto = () => setMostrar({ mostrar: false, producto: {} })
+    const noVerProducto = () => setMostrar({mostrar : false , producto : {}})
 
     const obtener_productos = async () => {
         try {
@@ -56,16 +56,16 @@ function Productos() {
         obtener_productos();
     }, []);
 
-    return (
+    return(
         <>
-            <p></p>
-            <p></p>
-            <Buscador busqueda={busqueda} buscarProducto={buscarProducto} />
-            <VistaProducto {...mostrar} cerrar={noVerProducto} />
+        <p></p>
+        <p></p>
+        <Buscador busqueda={busqueda} buscarProducto={buscarProducto}/>
+        <VistaProducto {...mostrar} cerrar={noVerProducto}/>
             <section>
                 <div className="galeria">
                     {productos && productos.length > 0 ? (
-                        results.map(producto => <Producto {...producto} />)
+                        results.map(producto => <Producto {...producto}/>)
                     ) : (
                         <p>Cargando los sapo perros productos...</p>
                     )}

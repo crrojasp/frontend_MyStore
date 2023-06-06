@@ -172,8 +172,10 @@ const RegistroComprador = () => {
                         </button>
                     </div>
                 </form>
+
             </div>
         </div>
+
     );
 };
 

@@ -32,7 +32,7 @@ const Carrito = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Carrito
+export default Carrito;
