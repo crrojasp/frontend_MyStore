@@ -2,6 +2,7 @@ import React, { useState, useEffect, handleClick } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './../Estilos/Galeria.css';
+
 import VistaProducto from '../vistas/VistaProducto';
 import Buscador from '../vistas/Buscador';
 
@@ -27,7 +28,6 @@ export function Producto({id,ilustracion,precio,nombre}){
 function Productos(){
 
     const [productos, setProductos] = useState([]);
-
     const [busqueda, setBusqueda] = useState('');
 
     const buscarProducto = (e) => {
