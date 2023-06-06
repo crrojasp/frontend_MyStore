@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./../Estilos/CrearProducto.css";
-
 const CrearProducto = () => {
     const [producto, setProducto] = useState({ nombre: "", descripcion: "", precio: "", ilustracion: null, });
     const handleChange = (event) => {
@@ -25,7 +23,7 @@ const CrearProducto = () => {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
-
+                
             });
         } catch (error) {
             console.error("Error sending data:", error);
@@ -33,36 +31,18 @@ const CrearProducto = () => {
     };
 
     return (
-        <div className="container">
-            <div className="form">
-                <h1 className="title">Crear Producto</h1>
-                <form onSubmit={handleSubmit}>
-                    <div className="input-group">
-                        <label>Nombre:</label>
-                        <input type="text" name="nombre" value={producto.nombre} onChange={handleChange} />
-                    </div>
-                    <div className="input-group">
-                        <label>Descripción:</label>
-                        <textarea name="descripcion" value={producto.descripcion} onChange={handleChange}></textarea>
-                    </div>
-                    <div className="input-group">
-                        <label>Precio:</label>
-                        <input type="number" name="precio" value={producto.precio} onChange={handleChange} />
-                    </div>
-                    <div className="input-group">
-                        <label>Ilustración:</label>
-                        <input type="file" name="ilustracion" onChange={handleChange} />
-                    </div>
-                    {producto.ilustracion && (
-                        <div className="preview">
-                            <img src={URL.createObjectURL(producto.ilustracion)} alt="Preview" />
-                        </div>
-                    )}
-                    <button type="submit" className="submit-button">Crear Producto</button>
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100" >
+            <div className="bg-white border rounded-lg shadow-lg p-25 max-w-xs w-full">
+                <h1 className="text-2xl font-bold mb-6 justify-center">Crear Producto</h1>
+                <form onSubmit={handleSubmit} className="bg-purple-300 space-y-6">
+                    <label> Nombre: <input type="text" name="nombre" value={producto.nombre} onChange={handleChange} /> </label>
+                    <label> Descripción: <textarea name="descripcion" value={producto.descripcion} onChange={handleChange}></textarea> </label>
+                    <label> Precio: <input type="number" name="precio" value={producto.precio} onChange={handleChange} /> </label>
+                    <label> Ilustración: <input type="file" name="ilustracion" onChange={handleChange} /> </label>
+                    <button type="submit"> Crear Producto </button>
                 </form>
             </div>
         </div>
     );
-
 };
 export default CrearProducto;

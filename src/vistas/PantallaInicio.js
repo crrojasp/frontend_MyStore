@@ -5,7 +5,6 @@ import './../Estilos/Galeria.css';
 import './../Estilos/PantallaInicio.css';
 import Buscador from '../vistas/Buscador';
 import Productos from '../vistas/Productos';
-import Footer from './../partes/Footer';
 
 const PantallaInicio = () => {
 
@@ -41,8 +40,8 @@ const PantallaInicio = () => {
             <Buscador/>
             <Productos/>
             <script src="./../partes/VentanaEmergente.js"></script>
-            <Footer/>
         </div>
+
     );
 };
 
