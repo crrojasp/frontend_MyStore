@@ -9,7 +9,7 @@ const RusticoTemplate = ({ name, logo, products }) => {
 
     const obtenerProductos = async () => {
         try {
-            const response = await axios.get('http://localhost:8888/productos');
+            const response = await axios.get('http://143.198.78.159/productos');
             setProductos(response.data.productos);
         } catch (error) {
             console.error(error);
@@ -19,7 +19,7 @@ const RusticoTemplate = ({ name, logo, products }) => {
     const obtenerReseñas = async () => {
         setReviews(5);
         // try {
-        //     const response = await axios.get('http://localhost:8888/resenas');
+        //     const response = await axios.get('http://143.198.78.159/resenas');
         //     setReviews(response.data.resenas);
         // } catch (error) {
         //     console.error(error);

@@ -19,7 +19,7 @@ const CrearProducto = () => {
             console.log(key, value);
         }
         try {
-            await axios.post("http://localhost:8888/producto/", data, {
+            await axios.post("http://143.198.78.159/producto/", data, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
