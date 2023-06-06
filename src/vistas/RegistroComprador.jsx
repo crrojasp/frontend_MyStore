@@ -8,8 +8,9 @@ const RegistroComprador = () => {
         name: "",
         email: "",
         password: "",
-        tipo: "",
+        tipo: "comprador",
         cellphone: "",
+        direccion: "",
     });
 
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -28,19 +29,49 @@ const RegistroComprador = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const errors = validate(formDataUser);
+
         if (Object.keys(errors).length === 0) {
             try {
-                response = await axios.post('http://127.0.0.1:8888/register', formDataUser);
-                alert('Registro exitoso');
-                console.log(response.data.id);
+                console.log("Datos enviados:", {
+                    user: {
+                        name: formDataUser.name,
+                        email: formDataUser.email,
+                        password: formDataUser.password,
+                        tipo: "comprador", // Establece el tipo como "comprador"
+                        cellphone: formDataUser.cellphone,
+                    },
+                    comprador: {
+                        direccion: formDataUser.direccion,
+                        historial_compras: "",
+                        nombre: formDataUser.name,
+                        telefono: formDataUser.cellphone,
+                    },
+                });
+                const response = await axios.post('http://143.198.78.159/registro_comprador', {
+                    user: {
+                        name: formDataUser.name,
+                        email: formDataUser.email,
+                        password: formDataUser.password,
+                        tipo: "comprador", // Establece el tipo como "comprador"
+                        cellphone: formDataUser.cellphone,
+                    },
+                    comprador: {
+                        direccion: formDataUser.direccion,
+                        historial_compras: "",
+                        name: formDataUser.name,
+                        telefono: formDataUser.cellphone,
+                    },
+                });
+                console.log(response.data);
             } catch (error) {
                 console.error(error);
-                alert('Ocurrió un error al registrar el usuario');
+                console.log('Ocurrió un error al registrar el usuario');
             }
         } else {
             setErrors(errors);
         }
     };
+
 
     const validate = (values) => {
         const errors = {};
@@ -135,14 +166,14 @@ const RegistroComprador = () => {
                     </div>
                     <div className="flex justify-center">
                         <button type="submit" className="bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
-                            Registrarse
+                            <Link to="/ingreso" className="text-white">
+                                Registrarse
+                            </Link>
                         </button>
                     </div>
                 </form>
-
             </div>
         </div>
-
     );
 };
 

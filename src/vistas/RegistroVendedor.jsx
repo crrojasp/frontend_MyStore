@@ -10,6 +10,9 @@ const RegistroVendedor = () => {
         password: "",
         tipo: "",
         cellphone: "",
+        nombre_tienda: "",  // Agrega los campos adicionales al estado
+        rues: "",
+        historial_ventas: "",
     });
 
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -30,12 +33,40 @@ const RegistroVendedor = () => {
         const errors = validate(formData);
         if (Object.keys(errors).length === 0) {
             try {
-                response = await axios.post('http://127.0.0.1:8888/register', formData);
-                alert('Registro exitoso');
-                console.log(response.data.id);
+                console.log("Datos enviados:", {
+                    user: {
+                        name: formData.name,
+                        email: formData.email,
+                        password: formData.password,
+                        tipo: "vendedor",
+                        cellphone: formData.cellphone,
+                    },
+                    vendedor: {
+                        nombre_tienda: formData.nombre_tienda,
+                        rues: formData.rues,
+                        historial_ventas: "",
+                        nombre: formData.name,
+                    },
+                });
+                response = await axios.post('http://143.198.78.159/registro_vendedor', {
+                    user: {
+                        name: formData.name,
+                        email: formData.email,
+                        password: formData.password,
+                        tipo: "vendedor",  // Establece el tipo como "vendedor"
+                        cellphone: formData.cellphone,
+                    },
+                    vendedor: {
+                        nombre_tienda: formData.nombre_tienda,  // Ajusta los valores según tus necesidades
+                        rues: formData.rues,  // Ajusta los valores según tus necesidades
+                        historial_ventas: "",  // Ajusta los valores según tus necesidades
+                        nombre: formData.name,  // Ajusta los valores según tus necesidades
+                    },
+                });
+                console.log(response.data);
             } catch (error) {
                 console.error(error);
-                alert('Ocurrió un error al registrar el usuario');
+                console.log('Ocurrió un error al registrar el usuario');
             }
         } else {
             setErrors(errors);
@@ -123,16 +154,36 @@ const RegistroVendedor = () => {
                         />
                         {errors.cellphone && (<div className="text-red-500 text-sm mt-1">{errors.cellphone}</div>)}
                     </div>
+                    <div className="mb-4">
+                        <label htmlFor="rues" className="block text-gray-700 font-bold mb-2">
+                            RUES
+                        </label>
+                        <input
+                            type="integer" id="rues"
+                            className="border border-gray-400 py-2 px-3 rounded-lg w-full focus:outline-none focus:ring"
+                            required value={formData.rues} onChange={handleChange}
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="nombre_tienda" className="block text-gray-700 font-bold mb-2">
+                            Nombre de su tienda
+                        </label>
+                        <input
+                            type="text" id="nombre_tienda"
+                            className="border border-gray-400 py-2 px-3 rounded-lg w-full focus:outline-none focus:ring"
+                            required value={formData.nombre_tienda} onChange={handleChange}
+                        />
+                    </div>
                     <div className="flex justify-center">
                         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
-                            Registrarse
+                            <Link to="/ingreso" className="text-white">
+                                Registrarse
+                            </Link>
                         </button>
                     </div>
                 </form>
-
             </div>
         </div>
-
     );
 };
 

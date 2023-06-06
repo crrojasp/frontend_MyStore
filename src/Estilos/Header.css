@@ -5,9 +5,15 @@ nav{
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: rgb(108, 53, 121);
+    box-shadow: 10px 10px 20px #00000020;
+    overflow: hidden;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    max-width: 1530px;
 }
 
 /*Modificacion imagen*/
@@ -88,4 +94,39 @@ header .bg-blue-500 {
 
 header .bg-blue-500:hover {
     background-color: #1a4d8b;
+}
+
+header .carrito{
+    position: absolute;
+    cursor: pointer;
+    top : 1rem;
+    right: 11.2rem;
+    
+}header .carrito box-icon{
+    width: 25px;
+    height: 25px;    
+}
+header .carrito span{
+    position: absolute;
+    top : -0.8rem;
+    right: -1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+    padding: 0rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: red;
+}
+
+
+/*----Responsive----*/
+@media only screen and (max-width: 600px){
+    header .relative{
+        display: none;
+    }
 }

@@ -8,6 +8,9 @@ import CrearProducto from './vistas/crearproducto';
 import Header from './partes/Header';
 import RegistroComprador from './vistas/RegistroComprador';
 import RegistroVendedor from './vistas/RegistroVendedor';
+import Somos from './vistas/Somos';
+import Legal from './vistas/Legal';
+import Preguntas from './vistas/Preguntas';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,6 +51,9 @@ function App() {
                     path="/*"
                     element={<PantallaInicio isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
                 />
+                <Route path="/Somos" element={<Somos />}/>
+                <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+                <Route path="/Preguntas" element={<Preguntas />} />
                 <Route path="/crearproducto" element={<CrearProducto />} />
 
             </Routes>
