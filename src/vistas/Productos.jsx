@@ -3,17 +3,45 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './../Estilos/Galeria.css';
 import VistaProducto from '../vistas/VistaProducto';
+import Buscador from '../vistas/Buscador';
 
 
-function Productos(){
+export function Producto({ id, ilustracion, precio, nombre }) {
+
+    return (
+        <Link to='/VistaProducto'>
+            <div key={id} className="card-producto">
+                <img className="imagen-producto" src={`data:image/jpeg;base64,${ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
+                <div className="footer_producto">
+                    <h1 className="nombre-producto">{nombre}</h1>
+                    <p className="precio-producto">{`PRECIO: $${precio}`}</p>
+                </div>
+                <div className="boton_carrito">
+                    <button className='btn_carrito'>Añadir al carrito</button>
+                </div>
+            </div>
+        </Link>
+    )
+}
+
+function Productos() {
 
     const [productos, setProductos] = useState([]);
 
-    const [mostrar, setMostrar] = useState({mostrar : false, producto : {}})
+    const [busqueda, setBusqueda] = useState('');
 
-    const VerProducto = (producto) => setMostrar({mostrar : true , producto })
+    const buscarProducto = (e) => {
+        setBusqueda(e.target.value)
+    }
 
-    const noVerProducto = () => setMostrar({mostrar : false , producto : {}})
+    //filtrado de datos
+    const results = !busqueda ? productos : productos.filter((dato) => dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
+
+    const [mostrar, setMostrar] = useState({ mostrar: false, producto: {} })
+
+    const VerProducto = (producto) => setMostrar({ mostrar: true, producto })
+
+    const noVerProducto = () => setMostrar({ mostrar: false, producto: {} })
 
     const obtener_productos = async () => {
         try {
@@ -28,31 +56,21 @@ function Productos(){
         obtener_productos();
     }, []);
 
-    return(
+    return (
         <>
-        {/* <VistaProducto {...mostrar} cerrar={noVerProducto} />*/}
-        <p></p>
-        <p></p>
-        <section>
-            <div className="galeria">
-                {productos && productos.length > 0 ? (
-                    productos.map((producto) => (
-                        <div key={producto.id} className="card-producto" onClick={() => VerProducto(producto)}>
-                            <Link to="/VistaProducto" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Detalle
-                            </Link>
-                            <img className="imagen-producto" src={`data:image/jpeg;base64,${producto.ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
-                            <p className='titulo-producto'>
-                                <span className="nombre-producto">{producto.nombre}</span>
-                                <span className="precio-producto">{producto.precio}</span>
-                            </p>
-                        </div>
-                    ))
-                ) : (
-                    <p>Cargando productos...</p>
-                )}
-            </div>
-        </section>
+            <p></p>
+            <p></p>
+            <Buscador busqueda={busqueda} buscarProducto={buscarProducto} />
+            <VistaProducto {...mostrar} cerrar={noVerProducto} />
+            <section>
+                <div className="galeria">
+                    {productos && productos.length > 0 ? (
+                        results.map(producto => <Producto {...producto} />)
+                    ) : (
+                        <p>Cargando los sapo perros productos...</p>
+                    )}
+                </div>
+            </section>
         </>
     )
 }
