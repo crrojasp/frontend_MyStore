@@ -1,0 +1,138 @@
+.section-white {
+  display:grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  gap: 10px;
+  padding: 40px;
+  background-color: #f5f5f5;
+  align-items: center;
+}
+
+.Ourteam{
+  text-align: center;
+  font-size: 28px;
+  color:rgb(108, 53, 121); ;
+}
+.team-members {
+  display: flex;
+  text-align: center;
+  flex-wrap: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.Diana {
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.Julian {
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+.Cristian {
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+.Diana:hover{
+  width: 210px;
+  height: 310px;
+}
+.Cristian:hover{
+  width: 210px;
+  height: 310px;
+}
+.Julian:hover{
+  width: 210px;
+  height: 310px;
+}
+.Diana img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.Julian img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.Cristian img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.Diana  h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+.Julian  h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+.Cristian  h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+.Diana  p {
+  color: #888888;
+}
+.Julian  p {
+  color: #888888;
+}
+.Cristian  p {
+  color: #888888;
+}
+.descripcion{
+  text-align: justify;
+}
+@media screen and (max-width: 768px) {
+  .Diana {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Julian {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Cristian {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+
