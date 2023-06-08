@@ -107,9 +107,6 @@
 .btn_carrito:hover {
     transform: scale(1.05);
     opacity: 0.9;
-<<<<<<< HEAD
-}
-=======
 }
 
 .product-quantity {
@@ -160,8 +157,3 @@
     transform: scale(1.05);
     opacity: 0.9;
 }
-
-  .boton_carrito{
-    gap: 5px;
-  }
->>>>>>> origin/Julian

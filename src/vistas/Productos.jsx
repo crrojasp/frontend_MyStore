@@ -26,7 +26,7 @@ function Productos(){
 
     const obtener_productos = async () => {
         try {
-            const response = await axios.get('http://httpsbackendmystoreunal.com/productos');
+            const response = await axios.get('https://httpsbackendmystoreunal.com/productos');
             setProductos(response.data.productos);
         } catch (error) {
             console.error(error);

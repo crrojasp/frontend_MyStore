@@ -196,7 +196,3 @@ const RegistroVendedor = () => {
 };
 
 export default RegistroVendedor;
-
-    );
-};
-export default RegistroVendedor;

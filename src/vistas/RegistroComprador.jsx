@@ -186,5 +186,3 @@ const RegistroComprador = () => {
 };
 
 export default RegistroComprador;
-
-export default RegistroComprador;

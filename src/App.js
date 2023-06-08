@@ -23,11 +23,12 @@ import Productos from './vistas/Productos';
 import Registro from './vistas/Registro';
 import RegistroComprador from './vistas/RegistroComprador';
 import RegistroVendedor from './vistas/RegistroVendedor';
+import Somos from './vistas/Somos';
 import { VistaProducto } from './vistas/VistaProducto';
 import './App.css'
 
 import './App.css';
-import { UserProvider } from './UserContext';
+import { UserContext, UserProvider } from './UserContext';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,39 +44,50 @@ function App() {
   return (
     <Router>
       <CarritoProvider>
-        <Header
-          isLoggedIn={isLoggedIn}
-          setShowIngreso={setShowIngreso}
-          showIngreso={showIngreso}
-          handleLogout={handleLogout}
-        />
-        <Routes>
-          <Route path="/ingreso" element={ <Ingreso setIsLoggedIn={setIsLoggedIn} setShowIngreso={setShowIngreso} showIngreso={showIngreso} setUserData={setUserData} /> } />
-          <Route path="/selector" element={<Registro />} />
-          <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
-          <Route path="/RegistroComprador" element={<RegistroComprador />} />
-          <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-          <Route path="/*" element={<PantallaInicio isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/crearproducto" element={<CrearProducto />} />
-          <Route path="/PQRSpage" element={<PQRSPage />} />
-          <Route path="/CreacionTienda" element={<CreacionTienda />} />
-          <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
-          <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
-          <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
-          <Route path="/VistaProducto" element={<VistaProducto />} />
-          <Route path="/Perfil" element={<Perfil />} />
-          <Route path="/PantallaComprador" element={<PantallaComprador />} />
-          <Route path="/PantallaVendedor" element={<PantallaVendedor />} />
-          <Route path="/Planes" element={<Planes />} />
-          <Route path="/Somos" element={<Somos />} />
-          <Route path="/Preguntas" element={<Preguntas />} />
-          <Route path="/Planes" element={<Planes />} />
-          <Route path="/crearproducto" element={<CrearProducto />} />
-          <Route path='/VistaProducto' element={<VistaProducto />} />
-          <Route path="/carrito" element={<Carrito />} />
-          <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
-
-        </Routes>
+        <UserProvider>
+          <Header
+            isLoggedIn={isLoggedIn}
+            setShowIngreso={setShowIngreso}
+            showIngreso={showIngreso}
+            handleLogout={handleLogout}
+          />
+          <Routes>
+            <Route
+              path="/ingreso"
+              element={
+                <Ingreso
+                  setIsLoggedIn={setIsLoggedIn}
+                  setShowIngreso={setShowIngreso}
+                  showIngreso={showIngreso}
+                  setUserData={setUserData}
+                />
+              }
+            />
+            <Route path="/Somos" element={<Somos />}/>
+            <Route path="/Planes" element={<Planes />} />
+            <Route path="/selector" element={<Registro />} />
+            <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
+            <Route path="/RegistroComprador" element={<RegistroComprador />} />
+            <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+            <Route path="/*" element={<PantallaInicio />} />
+            <Route path="/crearproducto" element={<CrearProducto />} />
+            <Route path="/PQRSpage" element={<PQRSPage />} />
+            <Route path="/CreacionTienda" element={<CreacionTienda />} />
+            {/* <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
+            <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
+            <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} /> */}
+            <Route path="/VistaProducto" element={<VistaProducto />} />
+            <Route path='/Perfil' element={<Perfil />} />
+            <Route path='/PantallaComprador' element={<PantallaComprador />} />
+            <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
+            <Route path="/Somos" element={<Somos />} />
+            <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+            <Route path="/Preguntas" element={<Preguntas />} />
+            <Route path="/crearproducto" element={<CrearProducto />} />
+            <Route path="/carrito" element={<Carrito />} />
+            <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
+          </Routes>
+        </UserProvider>
       </CarritoProvider>
     </Router>
   );
