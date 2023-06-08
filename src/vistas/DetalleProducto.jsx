@@ -10,24 +10,24 @@ const DetalleProducto = () => {
 
     useEffect(() => {
         productos.forEach(element => {
-            if(element.id === parseInt(params.id)){
+            if (element.id === parseInt(params.id)) {
                 setDetalle(element)
             }
         });
-    },[params.id,productos])
+    }, [params.id, productos])
 
-  return (
-    <>
-        {
-            <div className="detalle">
-                <h2>{detalle.nombre}</h2>
-                <p className="precio">${detalle.precio}</p>
-                <p className="descripcion">Descripcion: {detalle.descripcion}</p>
-                <img className="imagen-producto" src={`data:image/jpeg;base64,${detalle.ilustracion}`} alt="imagen del producto"/>
-            </div>
-        }
-    </>
-  )
+    return (
+        <>
+            {
+                <div className="detalle">
+                    <h2>{detalle.nombre}</h2>
+                    <p className="precio">${detalle.precio}</p>
+                    <p className="descripcion">Descripcion: {detalle.descripcion}</p>
+                    <img className="imagen-producto" src={`data:image/jpeg;base64,${detalle.ilustracion}`} alt="imagen del producto" />
+                </div>
+            }
+        </>
+    )
 }
 
 export default DetalleProducto

@@ -5,24 +5,6 @@ import Buscador from '../vistas/Buscador';
 import Producto from '../vistas/Producto';
 import { UserContext } from '../UserContext';
 
-export function Producto({id,ilustracion,precio,nombre}){
-
-    return(
-        <Link to='/VistaProducto'>
-            <div key={id} className="card-producto">
-                <img className="imagen-producto" src={`data:image/jpeg;base64,${ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
-                <div className="footer_producto">
-                    <h1 className="nombre-producto">{nombre}</h1>
-                    <p className="precio-producto">{`PRECIO: $${precio}`}</p>       
-                </div>
-                <div className="boton_carrito">
-                    <button className='btn_carrito'>Añadir al carrito</button>
-                </div>
-            </div>
-        </Link>   
-    )
-}
-
 function Productos(){
 
     const [productos, setProductos] = useContext(UserContext);
@@ -44,7 +26,7 @@ function Productos(){
 
     const obtener_productos = async () => {
         try {
-            const response = await axios.get('https://httpsbackendmystoreunal.com/productos');
+            const response = await axios.get('http://httpsbackendmystoreunal.com/productos');
             setProductos(response.data.productos);
         } catch (error) {
             console.error(error);

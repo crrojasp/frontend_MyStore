@@ -5,4 +5,3 @@ export const VistaProducto = () => {
     <div>VistaProducto</div>
   )
 }
-
