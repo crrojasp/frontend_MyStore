@@ -48,7 +48,7 @@ const RegistroVendedor = () => {
                         nombre: formData.name,
                     },
                 });
-                response = await axios.post('http://143.198.78.159/registro_vendedor', {
+                response = await axios.post('https://httpsbackendmystoreunal.com/registro_vendedor', {
                     user: {
                         name: formData.name,
                         email: formData.email,

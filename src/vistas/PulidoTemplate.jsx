@@ -8,7 +8,7 @@ const PulidoTemplate = ({ name = "MyStore", logo = "/logo.png", products }) => {
 
     const obtenerProductos = async () => {
         try {
-            const response = await axios.get('http://143.198.78.159/productos');
+            const response = await axios.get('https://httpsbackendmystoreunal.com/productos');
             setProductos(response.data.productos);
         } catch (error) {
             console.error(error);
