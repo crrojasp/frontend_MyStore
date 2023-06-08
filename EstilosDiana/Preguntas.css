@@ -1,10 +1,11 @@
 /*Archivo raíz pa acceder al raiz, funciones*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 :root {
 	--primer:  rgb(108, 53, 121);
 	--gris: #a09d9d;
 	--sombra: 0 0 13px 0 rgba(185,185,185, .25);
 }
-
+/*Para todo*/
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -65,21 +66,17 @@ main {
 
 .categoria path {
 	fill: var(--gris);
-	transition: .3s ease all;
+	transition: .2s ease all;
 }
 
 .categoria.activa {
 	border: 3px solid var(--primer);
-	color: #000;
+	color: var(--primer);
 }
 
 .categoria.activa path {
 	fill: var(--primer);
 }
-
-/*! =================================================*/
-/*! ============= Contenedor Preguntas ============= */
-/*! =================================================*/
 .contenedor-preguntas {
 	display: none;
 	grid-template-columns: 1fr;
@@ -128,7 +125,7 @@ main {
 .respuesta {
 	color: #808080;
 	line-height: 30px;
-	max-height: 0;
+	max-height: 10;
 	opacity: 0;
 	transition: .3s ease all;
 }
@@ -142,9 +139,6 @@ main {
 	transform: rotate(45deg);
 }
 
-/*! =================================================*/
-/*! ============= Responsive Design ============= */
-/*! =================================================*/
 @media screen and (max-width: 820px){
 	.categorias {
 		grid-template-columns: 1fr 1fr;

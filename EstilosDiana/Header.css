@@ -24,6 +24,7 @@ header nav {
 header nav a {
     color: white;
     transition: color 0.3s;
+    font-family: 'Comfortaa', cursive;
 }
 
 header nav a:hover {
