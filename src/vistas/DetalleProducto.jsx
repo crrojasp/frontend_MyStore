@@ -23,7 +23,7 @@ const DetalleProducto = () => {
                 <h2>{detalle.nombre}</h2>
                 <p className="precio">${detalle.precio}</p>
                 <p className="descripcion">Descripcion: {detalle.descripcion}</p>
-                <img className="imagen-producto" src={`data:image/jpeg;base64,${detalle.img}`} alt="imagen del producto"/>
+                <img className="imagen-producto" src={`data:image/jpeg;base64,${detalle.ilustracion}`} alt="imagen del producto"/>
             </div>
         }
     </>
