@@ -4,7 +4,7 @@ import logo from './images/logo.png';
 
 const CambiarClave = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-purple-700">
+        <div className="flex flex-col items-center justify-center h-screen bg-white">
             <div className="bg-white border rounded-lg shadow-lg p-8 max-w-xs w-full">
                 <img className="w-28 mb-6" src={logo} alt="Logo" />
                 <h2 className="text-2xl font-bold mb-6">Cambiar contraseña</h2>
