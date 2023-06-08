@@ -78,15 +78,12 @@
   height: 350px;
   box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
   cursor:pointer;
-
 }
 .Julian:hover{
   width: 210px;
   height: 350px;
   box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
   cursor:pointer;
-
-
 }
 .Diana img {
   width: 100px;
@@ -150,7 +147,6 @@
   font-family: 'Comfortaa', cursive;
   text-align: justify;
   color:rgb(108, 53, 121)
-
 }
 @media screen and (max-width: 768px) {
   .Diana {
