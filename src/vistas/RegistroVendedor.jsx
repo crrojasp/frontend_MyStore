@@ -174,12 +174,12 @@ const RegistroVendedor = () => {
                             required value={formData.nombre_tienda} onChange={handleChange}
                         />
                     </div>
-                    <div className="Tyc">
+                    {/* <div className="Tyc">
                         <label className="Acepto">
                             <input type="checkbox" name="terminos" id="terminos" />
                             Acepto los términos y condiciones.
                         </label>
-                    </div>
+                    </div> */}
                     <div className="flex justify-center">
                         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
                             <Link to="/ingreso" className="text-white">
