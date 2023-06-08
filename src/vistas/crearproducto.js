@@ -21,7 +21,7 @@ const CrearProducto = () => {
             console.log(key, value);
         }
         try {
-            await axios.post("http://localhost:8888/producto/", data, {
+            await axios.post("https://httpsbackendmystoreunal.com/producto/", data, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
