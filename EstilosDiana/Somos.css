@@ -69,18 +69,23 @@
 }
 .Diana:hover{
   width: 210px;
-  height: 310px;
+  height: 350px;
   box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
+  cursor:pointer;
 }
 .Cristian:hover{
   width: 210px;
-  height: 310px;
+  height: 350px;
   box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
+  cursor:pointer;
+
 }
 .Julian:hover{
   width: 210px;
-  height: 310px;
+  height: 350px;
   box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
+  cursor:pointer;
+
 
 }
 .Diana img {
@@ -110,7 +115,7 @@
   margin-bottom: 10px;
 }
 .Diana  h3 {
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', negrita;
   margin-left: 20px;
   margin-bottom: 5px;
   font-size: 20px;
