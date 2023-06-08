@@ -1,9 +1,10 @@
 /*Contenedor del footer*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7e57c2;
+    background-color: rgb(108, 53, 121);
     color: white;
     padding: 1rem;
 }
@@ -16,6 +17,8 @@
     color: white;
     margin-left: 0.5rem;
     transition: color 0.2s ease-in-out;
+    font-family: 'Comfortaa', cursive;
+
 }
 /*Interacción del texto al activar el hover*/
 .redes-links a:hover {
