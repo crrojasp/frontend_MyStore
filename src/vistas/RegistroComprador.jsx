@@ -163,13 +163,13 @@ const RegistroComprador = () => {
                             required value={formDataUser.direccion} onChange={handleChange}
                         />
                     </div>
-                    {/* <div className="Tyc">
+                    <div className="Tyc">
                         <label className="Acepto">
                             <input type="checkbox" name="terminos" id="terminos" />
                             <a href="https://drive.google.com/file/d/1kqZJPK8JE6Z2EBkCKHfubotGNlVDRduN/view?usp=drive_link" />
                             Acepto los términos y condiciones.
                         </label>
-                    </div> */}
+                    </div>
                     <div className="flex justify-center">
                         <button type="submit" className="bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
                             <Link to="/ingreso" className="text-white">
