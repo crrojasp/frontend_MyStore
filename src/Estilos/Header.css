@@ -99,7 +99,8 @@ header .carrito{
     top : 1rem;
     right: 11.2rem;
     
-}header .carrito box-icon{
+}
+header .carrito box-icon{
     width: 25px;
     height: 25px;    
 }
