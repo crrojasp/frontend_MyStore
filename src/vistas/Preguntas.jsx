@@ -34,7 +34,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma"/>
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Mercado pago y PSE, pero se puede girar por medio de otros estableciendolo directamente con el vendedor.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -43,7 +43,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Sí.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -52,7 +52,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                No.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -61,18 +61,18 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Sí.
                             </p>
                         </div>
                     </div>
-                    <div className='contenedor-preguntas' data-categoria='entregas'>
+                    <div className='contenedor-preguntas activo' data-categoria='entregas'>
                         <div className='contenedor-pregunta'>
                             <p className="pregunta">
                                ¿Cuál es el tiempo de entrega?
                             <img src={suma} alt="suma"/>
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Depende de la ubicación pero el vendedor está obligado a remitirle el código de ruta emitido por las empresas de transporte.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -81,7 +81,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                En primera instancia dirigirse al vendedor.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -90,7 +90,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Reportarnos, para aplicar las debidas sanciones.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -99,18 +99,18 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                La ley obliga al vendedor a reponerlo, en caso de que no sea fortuito. Se soluciona directamente entre vendedor y comprador.
                             </p>
                         </div>
                     </div>
-                    <div className='contenedor-preguntas' data-categoria='seguridad'>
+                    <div className='contenedor-preguntas activo' data-categoria='seguridad'>
                         <div className='contenedor-pregunta'>
                             <p className="pregunta">
                                 ¿Qué políticas de privacidad y protección de datos tiene el ecommerce para garantizar que mi información no sea compartida o utilizada de manera inapropiada?
                             <img src={suma} alt="suma"/>
                             </p>
                             <p className="respuesta">
-                                equisde
+                                En términos y condiciones puede leer respecto al tema.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -119,7 +119,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Se sugiere siempre el uso de Mercado Pago, ya que las transacciones se pueden reversar.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -128,7 +128,8 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                            Se sugiere siempre el uso de Mercado Pago, ya que las transacciones se pueden reversar.
+
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -137,18 +138,18 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Si se hacen por mercado pago, se puede tener un monitoreo, de lo contrario, cada usuario es responsable de las transacciones que haga por Nequi y Daviplata.
                             </p>
                         </div>
                     </div>
-                    <div className='contenedor-preguntas' data-categoria='cuenta'>
+                    <div className='contenedor-preguntas activo' data-categoria='cuenta'>
                         <div className='contenedor-pregunta'>
                             <p className="pregunta">
                                 ¿Cómo se protegen las cuentas de usuario en esta red social de eCommerce?
                             <img src={suma} alt="suma"/>
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Habeas data.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -157,7 +158,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                En atención al usuario podrás reportarlo y el equipo se encargará de administrar y manejar las situaciones.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -166,7 +167,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Los tiempos de los pedidos pueden variar, pero, esto se soluciona directamente con el vendedor.
                             </p>
                         </div>
                         <div className='contenedor-pregunta'>
@@ -175,7 +176,7 @@ const Preguntas = () => {
                             <img src={suma} alt="suma" />
                             </p>
                             <p className="respuesta">
-                                equisde
+                                Se rigen por la habeas data y la seguridad estándar entre la BD y el servidor.
                             </p>
                         </div>
                     </div>
