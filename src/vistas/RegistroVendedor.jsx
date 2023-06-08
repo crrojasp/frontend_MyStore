@@ -70,6 +70,7 @@ const RegistroVendedor = () => {
             }
         } else {
             setErrors(errors);
+            console.log(errors);
         }
     };
 
