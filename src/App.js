@@ -15,6 +15,7 @@ import PantallaInicio from './vistas/PantallaInicio';
 import PantallaVendedor from './vistas/PantallaVendedor';
 import Perfil from './vistas/Perfil';
 import PQRSPage from './vistas/PQRSPage';
+import Planes from './vistas/Planes';
 import Preguntas from './vistas/Preguntas';
 import Productos from './vistas/Productos';
 import Registro from './vistas/Registro';
@@ -75,6 +76,7 @@ function App() {
               <Route path="/Perfil" element={<Perfil />} />
               <Route path="/PantallaComprador" element={<PantallaComprador />} />
               <Route path="/PantallaVendedor" element={<PantallaVendedor />} />
+              <Route path="/Planes" element={<Planes />} />
               <Route path="/Somos" element={<Somos />} />
               <Route path="/Preguntas" element={<Preguntas />} />
               <Route path="/Planes" element={<Planes />} />
