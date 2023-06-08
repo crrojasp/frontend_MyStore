@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useNavigate  } from 'react-router-dom';
 import logo from './images/logo.png';
 
-
 const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,6 +11,7 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData }) => {
         e.preventDefault();
         try {
             const response = await fetch('https://httpsbackendmystoreunal.com/login-utf8', {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,5 +100,4 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData }) => {
         </div>
     );
 };
-
 export default Ingreso;

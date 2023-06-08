@@ -41,3 +41,5 @@ const Somos = () => {
 };
 
 export default Somos;
+
+export default Somos;

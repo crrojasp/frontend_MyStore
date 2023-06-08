@@ -24,11 +24,9 @@ const PantallaInicio = () => {
     return (
         
         <div className="pantalla-inicio-container" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-            {/* <Buscador/> */}
             <Productos/>
             
         </div>
-
     );
 };
 

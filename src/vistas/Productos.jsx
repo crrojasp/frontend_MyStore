@@ -1,11 +1,9 @@
-import React, { useState, useEffect, handleClick } from 'react';
+import React, { useState, useEffect, handleClick, useContext } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import './../Estilos/Galeria.css';
-
-import VistaProducto from '../vistas/VistaProducto';
 import Buscador from '../vistas/Buscador';
-
+import Producto from '../vistas/Producto';
+import { UserContext } from '../UserContext';
 
 export function Producto({id,ilustracion,precio,nombre}){
 
@@ -27,7 +25,8 @@ export function Producto({id,ilustracion,precio,nombre}){
 
 function Productos(){
 
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useContext(UserContext);
+
     const [busqueda, setBusqueda] = useState('');
 
     const buscarProducto = (e) => {
@@ -61,13 +60,12 @@ function Productos(){
         <p></p>
         <p></p>
         <Buscador busqueda={busqueda} buscarProducto={buscarProducto}/>
-        <VistaProducto {...mostrar} cerrar={noVerProducto}/>
             <section>
                 <div className="galeria">
                     {productos && productos.length > 0 ? (
-                        results.map(producto => <Producto {...producto}/>)
+                        results.map(producto => <Producto {...producto} key={producto.id}/>)
                     ) : (
-                        <p>Cargando los sapo perros productos...</p>
+                        <p>Cargando los productos...</p>
                     )}
                 </div>
             </section>

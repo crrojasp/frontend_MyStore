@@ -46,7 +46,7 @@ const RegistroComprador = () => {
                         telefono: formDataUser.cellphone,
                     },
                 });
-                const response = await axios.post('http://127.0.0.1:8888/registro_comprador', {
+                const response = await axios.post('https://httpsbackendmystoreunal.com/registro_comprador', {
                     user: {
                         name: formDataUser.name,
                         email: formDataUser.email,
@@ -184,5 +184,7 @@ const RegistroComprador = () => {
 
     );
 };
+
+export default RegistroComprador;
 
 export default RegistroComprador;

@@ -187,3 +187,163 @@ const Preguntas = () => {
     );
 };
 export default Preguntas;
+
+                <div className='preguntas'>
+                    <div className='contenedor-preguntas activo' data-categoria='metodos-pago'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Cuáles son los métodos de pago disponibles?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Se aceptan tarjetas de crédito y débito?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Necesito cuenta de PSE para pagar?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Sirve mercado pago y paypal?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                    </div>
+                    <div className='contenedor-preguntas activo' data-categoria='entregas'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Cuál es el tiempo de entrega?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si llevo 30 días y mi pedido no ha llegado?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si se extiende el tiempo del pedido sin mi autorización?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si mi pedido está dañado?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                    </div>
+                    <div className='contenedor-preguntas activo' data-categoria='seguridad'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué políticas de privacidad y protección de datos tiene el ecommerce para garantizar que mi información no sea compartida o utilizada de manera inapropiada?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué medidas se toman para prevenir fraudes en transacciones en este eCommerce?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué medidas se toman para prevenir fraudes en transacciones en este eCommerce?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué medidas se toman para prevenir fraudes en transacciones en este eCommerce?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                    </div>
+                    <div className='contenedor-preguntas activo' data-categoria='cuenta'>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Cuál es el tiempo de entrega?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si llevo 30 días y mi pedido no ha llegado?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si se extiende el tiempo del pedido sin mi autorización?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                        <div className='contenedor-pregunta'>
+                            <p className="pregunta">
+                                ¿Qué hago si mi pedido está dañado?
+                                <img src={suma} alt="suma" />
+                            </p>
+                            <p className="respuesta">
+                                equisde
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </body>
+    );
+};
+export default Preguntas;

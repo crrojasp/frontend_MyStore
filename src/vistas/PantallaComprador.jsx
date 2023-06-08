@@ -22,10 +22,8 @@ const PantallaComprador = () => {
     return (
         
         <div className="pantalla-inicio-container" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-            <Buscador/>
             <Productos/>
             <script src="./../partes/VentanaEmergente.js"></script>
-            <Footer/>
         </div>
     );
 };

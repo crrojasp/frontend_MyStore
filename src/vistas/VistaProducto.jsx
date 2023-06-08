@@ -1,11 +1,8 @@
-//import './../Estilos/VistaProducto.css';
-function VistaProducto({producto}){
-    
-    return (      
-        <div>
-            <h1>Detalle</h1>
-        </div>
-    )
+import React from 'react'
+
+export const VistaProducto = () => {
+  return (
+    <div>VistaProducto</div>
+  )
 }
 
-export default VistaProducto;

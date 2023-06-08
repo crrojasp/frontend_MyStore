@@ -1,34 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-/*import './Header.css'*/
+import '../Estilos/Header.css';
+import 'boxicons';
+import { CarritoContext } from '../CarritoContext';
+
 const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
     const [showMenu, setShowMenu] = useState(false);
+
+    const [carrito, setCarrito] = useContext(CarritoContext);
+
+    const quantity = carrito.reduce((acc, curr) => {
+        return acc + curr.quantity;
+    } , 0)
 
     const handleMenuClick = () => {
         setShowMenu(!showMenu);
     };
 
     return (
-        /*22. <header className="header">*/
-        /*Para  23. <img src="/logo.png" alt="Logo" className="w-12 h-12 " />
-        cambiar por
-        <img src="/logo.png" alt="Logo" className="img" />*/
-        /*25. <nav className="flex gap-4 justify-between gap-4 w-full h-full">
-        cambiar por 
-        <nav classname="nav"> */
-        /*26. <Link to="/" className="text-white hover:text-gray-200 ">
-        cambiar por
-        <Link to="/" className="nav-link">*/
-        /*<button onClick={handleMenuClick} className="focus:outline-none">
-        Cambiar por*/
-        /*<Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Cambiar por
-        <Link to="/" className="bg-blue-500>
-
-        */ 
         <header className="flex justify-between items-center" style={{ backgroundColor: 'rgb(108, 53, 121)' }}>
             <div className="flex items-center gap-10 flex-grow">
-                <img src="/logo.png" alt="Logo" className="w-12 h-12 " />
+                <Link to="/" className="text-white hover:text-gray-200 ">
+                    <img src="/logo.png" alt="Logo" className="w-12 h-12 " />   
+                </Link>
                 <nav className="flex gap-4 justify-between gap-4 w-full h-full">
                     <Link to="/Planes" className="text-white hover:text-gray-200 ">
                         Planes
@@ -95,7 +89,14 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
                         </Link>
                     )}
 
-                    <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <div className='carrito'>
+                        <Link  to="/carrito" >
+                            <box-icon name="cart"></box-icon>
+                            <span className="items-carrito">{quantity}</span>
+                        </Link>
+                    </div>
+
+                    <Link to="/CreacionTienda" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Crear Tienda
                     </Link>
                 </nav>
