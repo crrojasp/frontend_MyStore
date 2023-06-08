@@ -1,154 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 .section-white {
-    display: grid;
-    grid-template-columns: 3fr 3fr 3fr;
-    gap: 10px;
-    padding: 40px;
-    background-color: #f5f5f5;
-    align-items: center;
+  display:grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 100px;
+  padding: 40px;
+  background-color: #f5f5f5;
+  align-items: center;
 }
 
-.Ourteam {
-    text-align: center;
-    font-size: 28px;
-    color: rgb(108, 53, 121);
-    ;
+.Ourteam{
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  display: grid;
+  text-align: left;
+  font-family: 'Comfortaa', cursive;
+  font-size: 28px;
+  color:rgb(108, 53, 121); ;
 }
-
 .team-members {
-    display: flex;
-    text-align: center;
-    flex-wrap: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  margin-left: 300px;
+  align-self: center;
+  display: flex;
+  text-align: center;
+  flex-wrap: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .Diana {
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    text-align: center;
-    margin: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-    align-items: center;
-    justify-content: center;
+  width: 200px;
+  height: 340px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .Julian {
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    text-align: center;
-    margin: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-    align-items: center;
-    justify-content: center;
+  width: 200px;
+  height: 340px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
 }
-
 .Cristian {
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    text-align: center;
-    margin: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: width 0.3s ease;
-    align-items: center;
-    justify-content: center;
+  width: 200px;
+  height: 340px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  align-items: center;
+  justify-content: center;
 }
-
-.Diana:hover {
-    width: 210px;
-    height: 310px;
+.Diana:hover{
+  width: 210px;
+  height: 310px;
+  box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
 }
-
-.Cristian:hover {
-    width: 210px;
-    height: 310px;
+.Cristian:hover{
+  width: 210px;
+  height: 310px;
+  box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
 }
+.Julian:hover{
+  width: 210px;
+  height: 310px;
+  box-shadow: 0 2px 4px rgb(108, 53, 121, 1);
 
-.Julian:hover {
-    width: 210px;
-    height: 310px;
 }
-
 .Diana img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-left: 35px;
+  align-self: center;
 
+}
 .Julian img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  margin-left: 35px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
-
 .Cristian img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  margin-left: 35px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
-
-.Diana h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
+.Diana  h3 {
+  font-family: 'Comfortaa', cursive;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
-
-.Julian h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
+.Julian  h3 {
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
-
-.Cristian h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
+.Cristian  h3 {
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
-
-.Diana p {
-    color: #888888;
+.Diana  p {
+  font-family: 'Comfortaa', cursive;
+  color: rgb(108, 53, 121);
+  font-size: 15px;
 }
-
-.Julian p {
-    color: #888888;
+.Julian  p {
+  font-family: 'Comfortaa', cursive;
+  color: rgb(108, 53, 121);
+  font-size: 15px;
 }
-
-.Cristian p {
-    color: #888888;
+.Cristian  p {
+  font-family: 'Comfortaa', cursive;
+  color: rgb(108, 53, 121);
+  font-size: 15px;
 }
+.descripcion{
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  text-align: justify;
+  color:rgb(108, 53, 121)
 
-.descripcion {
-    text-align: justify;
 }
-
 @media screen and (max-width: 768px) {
-    .Diana {
-        width: 100%;
-        max-width: 300px;
-    }
+  .Diana {
+    width: 100%;
+    max-width: 300px;
+  }
 }
-
 @media screen and (max-width: 768px) {
-    .Julian {
-        width: 100%;
-        max-width: 300px;
-    }
+  .Julian {
+    width: 100%;
+    max-width: 300px;
+  }
 }
-
 @media screen and (max-width: 768px) {
-    .Cristian {
-        width: 100%;
-        max-width: 300px;
-    }
+  .Cristian {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.Ms{
+  margin: 10px;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
+  
 }
