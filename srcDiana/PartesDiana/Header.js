@@ -30,7 +30,7 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
             <div className="flex items-center gap-10 flex-grow">
                 <img src="/logo.png" alt="Logo" className="w-12 h-12 " />
                 <nav className="flex gap-4 justify-between gap-4 w-full h-full">
-                    <Link to="/" className="text-white hover:text-gray-200 ">
+                    <Link to="/Planes" className="text-white hover:text-gray-200 ">
                         Planes
                     </Link>
                     <Link to="/Somos" className="text-white hover:text-gray-200 ">
