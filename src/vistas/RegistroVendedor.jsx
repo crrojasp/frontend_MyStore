@@ -48,7 +48,7 @@ const RegistroVendedor = () => {
                         nombre: formData.name,
                     },
                 });
-                response = await axios.post('https://httpsbackendmystoreunal.com/registro_vendedor', {
+                response = await axios.post('http://127.0.0.1:8888/registro_vendedor', {
                     user: {
                         name: formData.name,
                         email: formData.email,
@@ -105,7 +105,7 @@ const RegistroVendedor = () => {
         <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden md:max-w-lg">
             <div className="container">
                 <h1 className="title font-bold text-center mb-5">
-                    Registro para vendedor 
+                    Registro
                 </h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
@@ -173,6 +173,12 @@ const RegistroVendedor = () => {
                             className="border border-gray-400 py-2 px-3 rounded-lg w-full focus:outline-none focus:ring"
                             required value={formData.nombre_tienda} onChange={handleChange}
                         />
+                    </div>
+                    <div className="Tyc">
+                        <label className="Acepto">
+                            <input type="checkbox" name="terminos" id="terminos" />
+                            Acepto los términos y condiciones.
+                        </label>
                     </div>
                     <div className="flex justify-center">
                         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
