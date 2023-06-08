@@ -61,7 +61,7 @@ function Productos(){
         <p></p>
         <p></p>
         <Buscador busqueda={busqueda} buscarProducto={buscarProducto}/>
-        <VistaProducto {...mostrar} cerrar={noVerProducto}/>
+       
             <section>
                 <div className="galeria">
                     {productos && productos.length > 0 ? (

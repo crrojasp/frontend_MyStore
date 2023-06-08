@@ -13,6 +13,9 @@ import CreacionTienda from './vistas/CreacionTienda';
 import PulidoTemplate from './vistas/PulidoTemplate';
 import RusticoTemplate from './vistas/RusticoTemplate';
 import TecnologicoTemplate from './vistas/TecnologicoTemplate';
+import Somos from './vistas/Somos';
+import Preguntas from './vistas/Preguntas';
+import Carrito from './vistas/Carrito';
 import VistaProducto from './vistas/VistaProducto';
 import HeaderComprador from './partes/HeaderComprador';
 import Perfil from './vistas/Perfil';
@@ -20,38 +23,28 @@ import PantallaComprador from './vistas/PantallaComprador';
 import PantallaVendedor from './vistas/PantallaVendedor';
 import { UserProvider } from './UserContext';
 import './App.css';
+import Productos from './vistas/Productos';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showIngreso, setShowIngreso] = useState(false);
-    const [userData, setUserData] = useState(null);
-    const [userType, setUserType] = useState(null);
+    const [UserData, setUserData] = useState(false);
 
     const handleLogout = () => {
         setIsLoggedIn(false);
         setUserData(null);
-        setUserType(null);
         Navigate('/');
     };
 
     return (
         <Router>
             <UserProvider>
-                {isLoggedIn && userType === 'vendedor' ? (
-                    <Header
-                        isLoggedIn={isLoggedIn}
-                        setShowIngreso={setShowIngreso}
-                        showIngreso={showIngreso}
-                        handleLogout={handleLogout}
-                    />
-                ) : (
-                    <HeaderComprador
-                        isLoggedIn={isLoggedIn}
-                        setShowIngreso={setShowIngreso}
-                        showIngreso={showIngreso}
-                        handleLogout={handleLogout}
-                    />
-                )}
+                <Header
+                    isLoggedIn={isLoggedIn}
+                    setShowIngreso={setShowIngreso}
+                    showIngreso={showIngreso}
+                    handleLogout={handleLogout}
+                />
                 <Routes>
                     <Route
                         path="/ingreso"
@@ -61,7 +54,6 @@ function App() {
                                 setShowIngreso={setShowIngreso}
                                 showIngreso={showIngreso}
                                 setUserData={setUserData}
-                                setUserType={setUserType}
                             />
                         }
                     />
@@ -69,7 +61,7 @@ function App() {
                     <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
                     <Route path="/RegistroComprador" element={<RegistroComprador />} />
                     <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-                    <Route path="/*" element={<PantallaInicio isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+                    <Route path="/*" element={<PantallaInicio  />} />
                     <Route path="/crearproducto" element={<CrearProducto />} />
                     <Route path="/PQRSpage" element={<PQRSPage />} />
                     <Route path="/CreacionTienda" element={<CreacionTienda />} />
@@ -77,10 +69,18 @@ function App() {
                     <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
                     <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
                     <Route path="/VistaProducto" element={<VistaProducto />} />
-                    <Route path='/Perfil' element={<Perfil/>}/>
-                    <Route path='/PantallaComprador' element={<PantallaComprador/>}/>
-                    <Route path='/PantallaVendedor' element={<PantallaVendedor/>}/>
+                    <Route path='/Perfil' element={<Perfil />} />
+                    <Route path='/PantallaComprador' element={<PantallaComprador />} />
+                    <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
+                    <Route path="/Somos" element={<Somos />} />
+                    <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+                    <Route path="/Preguntas" element={<Preguntas />} />
+                    <Route path="/crearproducto" element={<CrearProducto />} />
+
+
+
                 </Routes>
+
             </UserProvider>
         </Router>
     );
