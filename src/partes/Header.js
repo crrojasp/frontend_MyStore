@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Estilos/Header.css';
 import 'boxicons';
+import { CarritoContext } from '../CarritoContext';
+
 const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
     const [showMenu, setShowMenu] = useState(false);
+
+    const [carrito, setCarrito] = useContext(CarritoContext);
+
+    const quantity = carrito.reduce((acc, curr) => {
+        return acc + curr.quantity;
+    } , 0)
 
     const handleMenuClick = () => {
         setShowMenu(!showMenu);
@@ -29,7 +37,9 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
         */ 
         <header className="flex justify-between items-center" style={{ backgroundColor: 'rgb(108, 53, 121)' }}>
             <div className="flex items-center gap-10 flex-grow">
-                <img src="/logo.png" alt="Logo" className="w-12 h-12 " />
+                <Link to="/" className="text-white hover:text-gray-200 ">
+                    <img src="/logo.png" alt="Logo" className="w-12 h-12 " />   
+                </Link>
                 <nav className="flex gap-4 justify-between gap-4 w-full h-full">
                     <Link to="/" className="text-white hover:text-gray-200 ">
                         Planes
@@ -97,11 +107,13 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
                     )}
 
                     <div className='carrito'>
-                        <box-icon name="cart"></box-icon>
-                        <span className="items-carrito">0</span>
+                        <Link  to="/carrito" >
+                            <box-icon name="cart"></box-icon>
+                            <span className="items-carrito">{quantity}</span>
+                        </Link>
                     </div>
 
-                    <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <Link to="/CreacionTienda" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Crear Tienda
                     </Link>
                 </nav>

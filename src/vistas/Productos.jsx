@@ -1,32 +1,13 @@
-import React, { useState, useEffect, handleClick } from 'react';
+import React, { useState, useEffect, handleClick, useContext } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import './../Estilos/Galeria.css';
-import VistaProducto from '../vistas/VistaProducto';
 import Buscador from '../vistas/Buscador';
-
-
-export function Producto({id,ilustracion,precio,nombre}){
-
-    return(
-        <Link to='/VistaProducto'>
-            <div key={id} className="card-producto">
-                <img className="imagen-producto" src={`data:image/jpeg;base64,${ilustracion}`} alt="imagen del producto" style={{ width: '70%', height: '70%' }} />
-                <div className="footer_producto">
-                    <h1 className="nombre-producto">{nombre}</h1>
-                    <p className="precio-producto">{`PRECIO: $${precio}`}</p>       
-                </div>
-                <div className="boton_carrito">
-                    <button className='btn_carrito'>Añadir al carrito</button>
-                </div>
-            </div>
-        </Link>   
-    )
-}
+import Producto from '../vistas/Producto';
+import { UserContext } from '../UserContext';
 
 function Productos(){
 
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useContext(UserContext);
 
     const [busqueda, setBusqueda] = useState('');
 
@@ -61,13 +42,12 @@ function Productos(){
         <p></p>
         <p></p>
         <Buscador busqueda={busqueda} buscarProducto={buscarProducto}/>
-       
             <section>
                 <div className="galeria">
                     {productos && productos.length > 0 ? (
-                        results.map(producto => <Producto {...producto}/>)
+                        results.map(producto => <Producto {...producto} key={producto.id}/>)
                     ) : (
-                        <p>Cargando los sapo perros productos...</p>
+                        <p>Cargando los productos...</p>
                     )}
                 </div>
             </section>

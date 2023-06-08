@@ -15,8 +15,7 @@ import RusticoTemplate from './vistas/RusticoTemplate';
 import TecnologicoTemplate from './vistas/TecnologicoTemplate';
 import Somos from './vistas/Somos';
 import Preguntas from './vistas/Preguntas';
-import Carrito from './vistas/Carrito';
-import VistaProducto from './vistas/VistaProducto';
+import {VistaProducto} from './vistas/VistaProducto';
 import HeaderComprador from './partes/HeaderComprador';
 import Perfil from './vistas/Perfil';
 import PantallaComprador from './vistas/PantallaComprador';
@@ -24,6 +23,10 @@ import PantallaVendedor from './vistas/PantallaVendedor';
 import { UserProvider } from './UserContext';
 import './App.css';
 import Productos from './vistas/Productos';
+import { CarritoProvider } from './CarritoContext';
+import Carrito from './vistas/Carrito';
+import DetalleProducto from './vistas/DetalleProducto';
+
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,7 +41,8 @@ function App() {
 
     return (
         <Router>
-            <UserProvider>
+            <CarritoProvider>
+            <UserProvider>  
                 <Header
                     isLoggedIn={isLoggedIn}
                     setShowIngreso={setShowIngreso}
@@ -76,13 +80,12 @@ function App() {
                     <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
                     <Route path="/Preguntas" element={<Preguntas />} />
                     <Route path="/crearproducto" element={<CrearProducto />} />
-
-
-
+                    <Route path="/carrito" element={<Carrito />} />
+                    <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
                 </Routes>
-
             </UserProvider>
-        </Router>
+            </CarritoProvider>
+        </Router>   
     );
 }
 
