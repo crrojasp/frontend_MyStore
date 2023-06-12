@@ -11,7 +11,6 @@ ReactDOM.render(
   <React.StrictMode>
     <div className="app-container" style={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <App />
-      <Footer />
     </div>
   </React.StrictMode>,
   document.getElementById('root')

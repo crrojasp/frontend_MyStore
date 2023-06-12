@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PulidoTemplate from './PulidoTemplate';
+import PulidoTemplate from './PulidoTemplate';
 import RusticoTemplate from './RusticoTemplate';
 import TecnologicoTemplate from './TecnologicoTemplate';
 import Footer from './../partes/Footer';
@@ -13,7 +13,7 @@ const CreacionTienda = () => {
   };
 
   const templates = [
-    // { id: 1, name: 'Pulido Template', component: <PulidoTemplate /> },
+    { id: 1, name: 'Pulido Template', component: <PulidoTemplate /> },
     { id: 2, name: 'Rustico Template', component: <RusticoTemplate /> },
     { id: 3, name: 'Tecnologico Template', component: <TecnologicoTemplate /> },
     // Agrega más plantillas según tus necesidades

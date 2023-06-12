@@ -1,4 +1,5 @@
-.titulo{
+.titulo {
+    /* Estilos para el modo claro */
     font-size: 36px;
     font-weight: 400;
     color: #000;
@@ -7,7 +8,13 @@
     padding-top: 20px;
 }
 
-.container-buscador{
+.titulo.dark {
+    /* Estilos para el modo oscuro */
+    color: #fff;
+}
+
+.container-buscador {
+    /* Estilos para el modo claro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,10 +23,15 @@
     width: 850px;
 }
 
-.input-buscar{
+.container-buscador.dark {
+    /* Estilos para el modo oscuro */
+    background-color: #333;
+}
+
+.input-buscar {
     background-color: #f2f2f2;
     border: 1px solid #ddd;
-    border-radius:  10px;
+    border-radius: 10px;
     padding: 12px;
     flex: 4;
     font-size: 16px;
@@ -27,13 +39,13 @@
     width: 650px;
 }
 
-.btn-buscar{
-    background-color:blueviolet;
-    color:#f2f2f2;
+.btn-buscar {
+    background-color: blueviolet;
+    color: #f2f2f2;
     border-radius: 16px;
     padding: 12px;
     border: none;
-    box-shadow: 4px 4px 16px #00000020; 
+    box-shadow: 4px 4px 16px #00000020;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +55,7 @@
     transition: 0.4s;
 }
 
-.btn-buscar > svg {
+.btn-buscar>svg {
     fill: #f2f2f2;
 }
 

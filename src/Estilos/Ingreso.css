@@ -15,6 +15,7 @@
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 30px;
+    color: #000000;
 }
 
 /*Formulario de ingreso*/
@@ -31,6 +32,7 @@
     font-weight: 600;
     margin-bottom: 10px;
     text-transform: uppercase;
+    color: #000000;
 }
 
 /*Campos de entrada*/
@@ -42,6 +44,7 @@
     font-size: 1rem;
     padding: 10px;
     width: 100%;
+    color: #000000;
 }
 
 /*Botón para enviar*/
@@ -63,10 +66,49 @@
     background-color: #0072bb;
 }
 
-/*Mensaje de error en caso de que halla un error*/
+/*Mensaje de error en caso de que haya un error*/
 .ingreso-container .error {
     color: #ed4956;
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 10px;
+}
+
+/* Estilos para el modo oscuro */
+.ingreso-container.dark {
+    background-color: #1C1C1C;
+    border-color: #37a2db;
+    color: #FFFFFF;
+}
+
+.ingreso-container.dark h2,
+.ingreso-container.dark label,
+.ingreso-container.dark input[type="email"],
+.ingreso-container.dark input[type="password"] {
+    color: #000000;
+}
+
+.ingreso-container.dark input[type="email"],
+.ingreso-container.dark input[type="password"] {
+    background-color: #1C1C1C;
+    border-color: #37a2db;
+}
+
+.ingreso-container.dark button[type="submit"] {
+    background-color: #37a2db;
+    color: #FFFFFF;
+}
+
+.ingreso-container.dark button[type="submit"]:hover {
+    background-color: #1a4d8b;
+}
+
+.ingreso-container.dark .error {
+    color: #ed4956;
+}
+
+/* Estilos para el logo en modo oscuro */
+.dark-logo {
+    width: 14.4rem;
+    height: 14.4rem;
 }

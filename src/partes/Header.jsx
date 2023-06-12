@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import '../Estilos/Header.css';
 import 'boxicons';
 import { CarritoContext } from '../CarritoContext';
+import logoLight from './../components/images/logo.png';
+import logoDark from './../components/images/logo2.png';
 
-const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
+const Header = ({ isLoggedIn, handleLogout, setShowIngreso, darkMode }) => {
+
     const [showMenu, setShowMenu] = useState(false);
-
     const [carrito, setCarrito] = useContext(CarritoContext);
 
     const quantity = carrito.reduce((acc, curr) => {
@@ -18,10 +20,10 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
     };
 
     return (
-        <header className="flex justify-between items-center" style={{ backgroundColor: 'rgb(108, 53, 121)' }}>
+        <header className={`custom-header ${darkMode ? 'dark' : ''}`}>
             <div className="flex items-center gap-10 flex-grow">
                 <Link to="/" className="text-white hover:text-gray-200 ">
-                    <img src="/logo.png" alt="Logo" className="w-12 h-12 " />
+                    <img src={darkMode ? logoDark : logoLight} alt="Logo" className="w-12 h-12" />
                 </Link>
                 <nav className="flex gap-4 justify-between gap-4 w-full h-full">
                     <Link to="/Planes" className="text-white hover:text-gray-200 ">
@@ -98,8 +100,8 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
                         Crear Tienda
                     </Link>
                 </nav>
-            </div>
-        </header>
+            </div >
+        </header >
     );
 };
 

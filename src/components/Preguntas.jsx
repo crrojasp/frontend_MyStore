@@ -1,7 +1,7 @@
 import React from 'react';
 import './../Estilos/Preguntas.css';
 
-import suma from '../vistas/images/suma.svg';
+import suma from '../components/images/suma.svg';
 const Preguntas = () => {
     return(
         <body>
