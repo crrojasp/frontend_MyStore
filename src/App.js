@@ -102,8 +102,8 @@ function App() {
                     <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
                     <Route path="/VistaProducto" element={<VistaProducto />} />
                     <Route path='/Perfil' element={<Perfil />} />
-                    <Route path='/PantallaComprador' element={<PantallaComprador />} />
-                    <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
+                    <Route path='/PantallaComprador' element={<PantallaComprador darkMode={darkMode} />} />
+                    <Route path='/PantallaVendedor' element={<PantallaVendedor darkMode={darkMode}/>} />
                     <Route path="/Somos" element={<Somos />} />
                     <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
                     <Route path="/Preguntas" element={<Preguntas />} />
