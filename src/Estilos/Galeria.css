@@ -157,3 +157,10 @@
     transform: scale(1.05);
     opacity: 0.9;
 }
+
+.btn-deseados i{
+    cursor: pointer;
+}
+.btn-deseados i:hover{
+    color: blue;
+}

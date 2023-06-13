@@ -15,7 +15,7 @@ const Deseado = () => {
         <>
             <div className='cart-container'>
                 <div className="cart-count">
-                    <p>Productos guardados: {quantity} </p>
+                    <p>Productos guardados: </p>
                 </div>
                 {deseado && deseado.length > 0 ? (
                         deseado.map((producto) => <Producto {...producto} ilustracion={producto.img} key={producto.id}/>
