@@ -7,6 +7,9 @@ import { CarritoProvider } from './CarritoContext';
 import CreacionTienda from './components/CreacionTienda';
 import CrearProducto from './components/crearproducto';
 import DetalleProducto from './components/DetalleProducto';
+import RusticoTemplate from './components/RusticoTemplate';
+import PulidoTemplate from './components/PulidoTemplate';
+import TecnologicoTemplate from './components/TecnologicoTemplate';
 import Header from './partes/Header';
 import Footer from './partes/Footer';
 import HeaderComprador from './partes/HeaderComprador';
@@ -86,9 +89,9 @@ function App() {
                   <Route path="/crearproducto" element={<CrearProducto />} />
                   <Route path="/PQRSpage" element={<PQRSPage />} />
                   <Route path="/CreacionTienda" element={<CreacionTienda />} />
-                  {/* <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
-            <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
-            <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} /> */}
+                  <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
+                  <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
+                  <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
                   <Route path="/VistaProducto" element={<VistaProducto />} />
                   <Route path='/Perfil' element={<Perfil />} />
                   <Route path='/PantallaComprador' element={<PantallaComprador />} />

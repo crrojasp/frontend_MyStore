@@ -12,17 +12,15 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData, darkMode }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://httpsbackendmystoreunal.com/login-utf8', {
-
-                method: 'POST',
+            const response = await fetch(`https://httpsbackendmystoreunal.com/login-utf8?email=${email}&password=${password}`, {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
             });
             const data = await response.json();
             if (response.ok) {
-                if (data.message === 'Contraseña incorrecta' | data.message === 'Usuario no encontrado') {
+                if (data.message === 'Contraseña incorrecta' || data.message === 'Usuario no encontrado') {
                     setError(data.message);
                     setEmail('');
                     setPassword('');
@@ -33,7 +31,6 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData, darkMode }) => {
                     setUserData(data);
                     navigate('/');
                 }
-
             } else {
                 setError(data.message);
                 setEmail('');
@@ -46,14 +43,15 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData, darkMode }) => {
     };
 
 
+
     return (
         <div className={`flex flex-col items-center justify-center h-screen ${darkMode ? 'dark' : 'bg-gray-100'}`}>
             <div className={`bg-white border rounded-lg shadow-lg p-8 max-w-xs w-full ${darkMode ? 'dark' : ''}`}>
-            <img
-        src={darkMode ? logoDark : logoLight}
-        alt="Logo"
-        className={`w-12 h-12 mx-auto mb-6 ${darkMode ? 'dark-logo' : ''}`}
-    />
+                <img
+                    src={darkMode ? logoDark : logoLight}
+                    alt="Logo"
+                    className={`w-12 h-12 mx-auto mb-6 ${darkMode ? 'dark-logo' : ''}`}
+                />
                 <h2 className={`text-2xl font-bold mb-6`}>Inicia sesión</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <label className="block">

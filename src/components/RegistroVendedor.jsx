@@ -16,7 +16,7 @@ const RegistroVendedor = () => {
     });
 
     const [confirmPassword, setConfirmPassword] = useState("");
-
+    const [registroExitoso, setRegistroExitoso] = useState(false);
     const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
@@ -31,39 +31,33 @@ const RegistroVendedor = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const errors = validate(formData);
+
         if (Object.keys(errors).length === 0) {
             try {
                 console.log("Datos enviados:", {
-                    user: {
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
+                    tipo: "vendedor",
+                    cellphone: formData.cellphone,
+                    nombre_tienda: formData.nombre_tienda,
+                    rues: formData.rues,
+                    nombre: formData.name,
+                });
+                const response = await axios.get('https://httpsbackendmystoreunal.com/registro_vendedor', {
+                    params: {
                         name: formData.name,
                         email: formData.email,
                         password: formData.password,
                         tipo: "vendedor",
                         cellphone: formData.cellphone,
-                    },
-                    vendedor: {
                         nombre_tienda: formData.nombre_tienda,
                         rues: formData.rues,
-                        historial_ventas: "",
                         nombre: formData.name,
                     },
                 });
-                response = await axios.post('https://httpsbackendmystoreunal.com/registro_vendedor', {
-                    user: {
-                        name: formData.name,
-                        email: formData.email,
-                        password: formData.password,
-                        tipo: "vendedor",  // Establece el tipo como "vendedor"
-                        cellphone: formData.cellphone,
-                    },
-                    vendedor: {
-                        nombre_tienda: formData.nombre_tienda,  // Ajusta los valores según tus necesidades
-                        rues: formData.rues,  // Ajusta los valores según tus necesidades
-                        historial_ventas: "",  // Ajusta los valores según tus necesidades
-                        nombre: formData.name,  // Ajusta los valores según tus necesidades
-                    },
-                });
                 console.log(response.data);
+                setRegistroExitoso(true);
             } catch (error) {
                 console.error(error);
                 console.log('Ocurrió un error al registrar el usuario');
@@ -108,6 +102,11 @@ const RegistroVendedor = () => {
                 <h1 className="title font-bold text-center mb-5">
                     Registro
                 </h1>
+                {registroExitoso && ( // Mostrar mensaje de registro exitoso si registroExitoso es verdadero
+                    <div className="text-green-500 text-center mb-4">
+                        Registro exitoso. ¡Bienvenido!
+                    </div>
+                )}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="name" className="block text-gray-700 font-bold mb-2">

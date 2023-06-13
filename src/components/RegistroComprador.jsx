@@ -32,32 +32,22 @@ const RegistroComprador = () => {
         if (Object.keys(errors).length === 0) {
             try {
                 console.log("Datos enviados:", {
-                    user: {
-                        name: formDataUser.name,
-                        email: formDataUser.email,
-                        password: formDataUser.password,
-                        tipo: "comprador", // Establece el tipo como "comprador"
-                        cellphone: formDataUser.cellphone,
-                    },
-                    comprador: {
-                        direccion: formDataUser.direccion,
-                        historial_compras: "",
-                        nombre: formDataUser.name,
-                        telefono: formDataUser.cellphone,
-                    },
+                    name: formDataUser.name,
+                    email: formDataUser.email,
+                    password: formDataUser.password,
+                    tipo: "comprador",
+                    cellphone: formDataUser.cellphone,
+                    direccion: formDataUser.direccion,
+                    telefono: formDataUser.cellphone,
                 });
-                const response = await axios.post('https://httpsbackendmystoreunal.com/registro_comprador', {
-                    user: {
+                const response = await axios.get('https://httpsbackendmystoreunal.com/registro_comprador', {
+                    params: {
                         name: formDataUser.name,
                         email: formDataUser.email,
                         password: formDataUser.password,
-                        tipo: "comprador", // Establece el tipo como "comprador"
+                        tipo: "comprador",
                         cellphone: formDataUser.cellphone,
-                    },
-                    comprador: {
                         direccion: formDataUser.direccion,
-                        historial_compras: "",
-                        name: formDataUser.name,
                         telefono: formDataUser.cellphone,
                     },
                 });
@@ -70,8 +60,6 @@ const RegistroComprador = () => {
             setErrors(errors);
         }
     };
-
-
     const validate = (values) => {
         const errors = {};
         if (!values.name.trim()) {
