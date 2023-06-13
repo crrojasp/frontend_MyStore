@@ -1,13 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import '../Estilos/Header.css';
 import 'boxicons';
 import { CarritoContext } from '../CarritoContext';
 import logoLight from './../components/images/logo.png';
 import logoDark from './../components/images/logo2.png';
+import { AuthContext } from './../AuthContext';
 
-const Header = ({ isLoggedIn, handleLogout, setShowIngreso, darkMode }) => {
 
+const Header = ({ handleLogout, setShowIngreso, darkMode  }) => {
+    const { isLoggedIn, userData } = useContext(AuthContext);
     const [showMenu, setShowMenu] = useState(false);
     const [carrito, setCarrito] = useContext(CarritoContext);
 
@@ -53,20 +55,20 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso, darkMode }) => {
                             </button>
                             {showMenu && (
                                 <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <div className="menu-container" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                         <Link
                                             onClick={() => {
                                                 setShowMenu(false);
                                                 // handleViewProfile();
                                             }}
-                                            className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 hover:text-gray-900"
+                                            className="menu-item"
                                             role="menuitem"
                                         >
                                             Ver mi perfil
                                         </Link>
                                         <Link
                                             to='/cambiarClave'
-                                            className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 hover:text-gray-900"
+                                            className="menu-item"
                                             role="menuitem"
                                         >
                                             Cambiar clave
@@ -76,7 +78,7 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso, darkMode }) => {
                                                 setShowMenu(false);
                                                 handleLogout();
                                             }}
-                                            className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 hover:text-gray-900"
+                                            className="menu-item"
                                             role="menuitem"
                                         >
                                             Cerrar sesión

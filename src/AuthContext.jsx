@@ -1,42 +1,31 @@
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
+// Crea el contexto
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
-
-export const AuthProvider = ({ children }) => {
+// Crea el proveedor del contexto
+const AuthProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(null);
 
-    const login = (token) => {
-        localStorage.setItem('token', token);
+    // Función para iniciar sesión
+    const login = (data) => {
         setIsLoggedIn(true);
+        setUserData(data);
     };
 
+    // Función para cerrar sesión
     const logout = () => {
-        localStorage.removeItem('token');
         setIsLoggedIn(false);
         setUserData(null);
     };
 
-    const getUserData = async () => {
-        // Realiza una solicitud para obtener la información del usuario usando el token de autenticación
-        try {
-            const response = await fetch('URL_DE_API_PARA_OBTENER_INFORMACION_DEL_USUARIO', {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
-                },
-            });
-            const data = await response.json();
-            setUserData(data);
-        } catch (error) {
-            console.error('Error al obtener la información del usuario:', error);
-        }
-    };
-
+    // Proporciona el contexto y las funciones a los componentes hijos
     return (
-        <AuthContext.Provider value={{ isLoggedIn, userData, login, logout, getUserData }}>
+        <AuthContext.Provider value={{ isLoggedIn, userData, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
 };
+
+export { AuthContext, AuthProvider };

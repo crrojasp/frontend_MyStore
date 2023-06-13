@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from './images/logo.png';
 import logoLight from './../components/images/logo.png';
 import logoDark from './../components/images/logo2.png';
+import { AuthContext } from './../AuthContext';
 
 const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData, darkMode }) => {
+    const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -29,7 +32,17 @@ const Ingreso = ({ setIsLoggedIn, setShowIngreso, setUserData, darkMode }) => {
                     console.log('Ingreso correcto!');
                     console.log('Datos:', data);
                     setUserData(data);
-                    navigate('/');
+                    const userType = data.user.tipo;
+                    login (data.user);
+                    if (userType === 'comprador') {
+                        navigate('/PantallaComprador');
+                    } else if (userType === 'vendedor') {
+                        navigate('/PantallaVendedor');
+                    } else {
+                        // Redirección por defecto si el tipo no es reconocido
+                        navigate('/');
+                        console.log(userType);
+                    }
                 }
             } else {
                 setError(data.message);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import './../Estilos/Registro.css';
 import { Link } from "react-router-dom";
 const RegistroComprador = () => {
-    const [formDataUser, setFormDataUser] = useState({
+    const [formDataUser, setformDataUser] = useState({
         name: "",
         email: "",
         password: "",
@@ -13,11 +13,11 @@ const RegistroComprador = () => {
     });
 
     const [confirmPassword, setConfirmPassword] = useState("");
-
+    const [registroExitoso, setRegistroExitoso] = useState(false);
     const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
-        setFormDataUser({
+        setformDataUser({
             ...formDataUser,
             [event.target.id]: event.target.value,
         });
@@ -35,31 +35,36 @@ const RegistroComprador = () => {
                     name: formDataUser.name,
                     email: formDataUser.email,
                     password: formDataUser.password,
-                    tipo: "comprador",
+                    tipo: "vendedor",
                     cellphone: formDataUser.cellphone,
-                    direccion: formDataUser.direccion,
-                    telefono: formDataUser.cellphone,
+                    nombre_tienda: formDataUser.nombre_tienda,
+                    rues: formDataUser.rues,
+                    nombre: formDataUser.name,
                 });
-                const response = await axios.get('https://httpsbackendmystoreunal.com/registro_comprador', {
-                    params: {
+                const response = await axios.get('https://httpsbackendmystoreunal.com/registro_vendedor', {
+                    data: {
                         name: formDataUser.name,
                         email: formDataUser.email,
                         password: formDataUser.password,
-                        tipo: "comprador",
+                        tipo: "vendedor",
                         cellphone: formDataUser.cellphone,
-                        direccion: formDataUser.direccion,
-                        telefono: formDataUser.cellphone,
+                        nombre_tienda: formDataUser.nombre_tienda,
+                        rues: formDataUser.rues,
+                        nombre: formDataUser.name,
                     },
                 });
                 console.log(response.data);
+                setRegistroExitoso(true);
             } catch (error) {
                 console.error(error);
                 console.log('Ocurrió un error al registrar el usuario');
             }
         } else {
             setErrors(errors);
+            console.log(errors);
         }
     };
+
     const validate = (values) => {
         const errors = {};
         if (!values.name.trim()) {

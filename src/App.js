@@ -29,6 +29,7 @@ import RegistroComprador from './components/RegistroComprador';
 import RegistroVendedor from './components/RegistroVendedor';
 import Somos from './components/Somos';
 import { VistaProducto } from './components/VistaProducto';
+import { AuthProvider, AuthContext } from './AuthContext';
 import './App.css'
 
 import './App.css';
@@ -48,67 +49,75 @@ function App() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
   return (
     <Router>
-      <ThemeProvider value={darkMode}>
-        <CarritoProvider>
-          <UserProvider>
-            <div className={`App ${darkMode ? 'dark' : 'light'}`}>
-              <button className="floating-button" onClick={toggleDarkMode}>
-                {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
-              </button>
-              <Header
-                isLoggedIn={isLoggedIn}
-                setShowIngreso={setShowIngreso}
-                showIngreso={showIngreso}
-                handleLogout={handleLogout}
-                darkMode = {darkMode}
-              />
-              <main className='flex justify-center'>
-                <Routes>
-                  <Route
-                    path="/ingreso"
-                    element={
-                      <Ingreso
-                        setIsLoggedIn={setIsLoggedIn}
+      <AuthProvider>
+        <ThemeProvider value={darkMode}>
+          <CarritoProvider>
+            <UserProvider>
+              <div className={`App ${darkMode ? 'dark' : 'light'}`}>
+                <button className="floating-button" onClick={toggleDarkMode}>
+                  {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
+                </button>
+                <AuthContext.Consumer>
+                  {(authContext) => {
+                    const { isLoggedIn, userData } = authContext;
+                    return (
+                      <Header
+                        isLoggedIn={isLoggedIn}
                         setShowIngreso={setShowIngreso}
                         showIngreso={showIngreso}
-                        setUserData={setUserData}
-                        darkMode = {darkMode}
+                        handleLogout={handleLogout}
+                        darkMode={darkMode}
                       />
-                    }
-                  />
-                  <Route path="/Somos" element={<Somos />} />
-                  <Route path="/Planes" element={<Planes />} />
-                  <Route path="/selector" element={<Registro />} />
-                  <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
-                  <Route path="/RegistroComprador" element={<RegistroComprador />} />
-                  <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-                  <Route path="/" element={<PantallaInicio darkMode={darkMode} />} />
-                  <Route path="/crearproducto" element={<CrearProducto />} />
-                  <Route path="/PQRSpage" element={<PQRSPage />} />
-                  <Route path="/CreacionTienda" element={<CreacionTienda />} />
-                  <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
-                  <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
-                  <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
-                  <Route path="/VistaProducto" element={<VistaProducto />} />
-                  <Route path='/Perfil' element={<Perfil />} />
-                  <Route path='/PantallaComprador' element={<PantallaComprador />} />
-                  <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
-                  <Route path="/Somos" element={<Somos />} />
-                  <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-                  <Route path="/Preguntas" element={<Preguntas />} />
-                  <Route path="/crearproducto" element={<CrearProducto />} />
-                  <Route path="/carrito" element={<Carrito />} />
-                  <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          </UserProvider>
-        </CarritoProvider>
-      </ThemeProvider>
+                    );
+                  }}
+                </AuthContext.Consumer>
+                <main className='flex justify-center'>
+                  <Routes>
+                    <Route
+                      path="/ingreso"
+                      element={
+                        <Ingreso
+                          setIsLoggedIn={setIsLoggedIn}
+                          setShowIngreso={setShowIngreso}
+                          showIngreso={showIngreso}
+                          setUserData={setUserData}
+                          darkMode={darkMode}
+                        />
+                      }
+                    />
+                    <Route path="/Somos" element={<Somos />} />
+                    <Route path="/Planes" element={<Planes />} />
+                    <Route path="/selector" element={<Registro />} />
+                    <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
+                    <Route path="/RegistroComprador" element={<RegistroComprador />} />
+                    <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+                    <Route path="/" element={<PantallaInicio darkMode={darkMode} />} />
+                    <Route path="/crearproducto" element={<CrearProducto />} />
+                    <Route path="/PQRSpage" element={<PQRSPage />} />
+                    <Route path="/CreacionTienda" element={<CreacionTienda />} />
+                    <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
+                    <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
+                    <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} />
+                    <Route path="/VistaProducto" element={<VistaProducto />} />
+                    <Route path='/Perfil' element={<Perfil />} />
+                    <Route path='/PantallaComprador' element={<PantallaComprador />} />
+                    <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
+                    <Route path="/Somos" element={<Somos />} />
+                    <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+                    <Route path="/Preguntas" element={<Preguntas />} />
+                    <Route path="/crearproducto" element={<CrearProducto />} />
+                    <Route path="/carrito" element={<Carrito />} />
+                    <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </div>
+            </UserProvider>
+          </CarritoProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </Router>
   );
 }

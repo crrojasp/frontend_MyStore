@@ -111,3 +111,27 @@ body {
     background-color: #f7fafc;
     color: #1a202c;
 }
+
+.menu-container {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 999;
+    width: 100%;
+    max-width: 300px;
+    /* Ajusta el ancho máximo según tus necesidades */
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+}
+
+.menu-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: lightgray;
+}
