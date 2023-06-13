@@ -16,16 +16,17 @@ const CrearProducto = () => {
         data.append("descripcion", producto.descripcion);
         data.append("precio", producto.precio);
         data.append("ilustracion", producto.ilustracion);
+        data.append("tienda", producto.tienda);
+        data.append("vendedor", producto.vendedor);
         console.log(data);
         for (let [key, value] of data.entries()) {
             console.log(key, value);
         }
         try {
-            await axios.post("https://httpsbackendmystoreunal.com/producto/", data, {
+            await axios.post("http://localhost:8888/producto/", data, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
-
             });
         } catch (error) {
             console.error("Error sending data:", error);
@@ -48,6 +49,14 @@ const CrearProducto = () => {
                     <div className="input-group">
                         <label>Precio:</label>
                         <input type="number" name="precio" value={producto.precio} onChange={handleChange} />
+                    </div>
+                    <div className="input-group">
+                        <label>Tienda:</label>
+                        <input type="text" name="tienda" value={producto.tienda} onChange={handleChange} />
+                    </div>
+                    <div className="input-group">
+                        <label>Vendedor:</label>
+                        <input type="text" name="vendedor" value={producto.vendedor} onChange={handleChange} />
                     </div>
                     <div className="input-group">
                         <label>Ilustración:</label>

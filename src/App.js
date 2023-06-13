@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 
 import CambiarClave from './vistas/CambiarClave';
 import Carrito from './vistas/Carrito';
+import Deseados from './vistas/Deseado';
 import { CarritoProvider } from './CarritoContext';
 import CreacionTienda from './vistas/CreacionTienda';
 import CrearProducto from './vistas/crearproducto';
@@ -85,6 +86,7 @@ function App() {
             <Route path="/Preguntas" element={<Preguntas />} />
             <Route path="/crearproducto" element={<CrearProducto />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/deseados" element={<Deseados />} />
             <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
           </Routes>
         </UserProvider>

@@ -18,15 +18,9 @@ function Productos(){
     //filtrado de datos
     const results = !busqueda ? productos :  productos.filter((dato) => dato.nombre.toLowerCase().includes(busqueda.toLocaleLowerCase()))
 
-    const [mostrar, setMostrar] = useState({mostrar : false, producto : {}})
-
-    const VerProducto = (producto) => setMostrar({mostrar : true , producto })
-
-    const noVerProducto = () => setMostrar({mostrar : false , producto : {}})
-
     const obtener_productos = async () => {
         try {
-            const response = await axios.get('https://httpsbackendmystoreunal.com/productos');
+            const response = await axios.get('http://localhost:8888/productos');
             setProductos(response.data.productos);
         } catch (error) {
             console.error(error);

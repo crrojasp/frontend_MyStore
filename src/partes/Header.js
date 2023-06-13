@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import '../Estilos/Header.css';
 import 'boxicons';
 import { CarritoContext } from '../CarritoContext';
+import { DeseadosContext } from '../DeseadosContext';
 
 const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const [carrito, setCarrito] = useContext(CarritoContext);
+
+    const [deseado, setDeseado] = useContext(DeseadosContext);
 
     const quantity = carrito.reduce((acc, curr) => {
         return acc + curr.quantity;
@@ -88,15 +91,23 @@ const Header = ({ isLoggedIn, handleLogout, setShowIngreso }) => {
                             Ingresar
                         </Link>
                     )}
+                    <Link to="/CreacionTienda" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Crear Tienda
+                    </Link>
+                    <Link to="/crearproducto" className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Crear Producto
+                    </Link>
                     <div className='carrito'>
                         <Link to="/carrito" >
                             <box-icon name="cart"></box-icon>
                             <span className="items-carrito">{quantity}</span>
                         </Link>
                     </div>
-                    <Link to="/CreacionTienda" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Crear Tienda
-                    </Link>
+                    <div className='deseados'>
+                        <Link to="/deseados" >
+                            <i class="bi bi-bookmark-star-fill"></i>
+                        </Link>
+                    </div>
                 </nav>
             </div>
         </header>

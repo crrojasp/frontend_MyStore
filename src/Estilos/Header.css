@@ -123,6 +123,17 @@ header .carrito span{
     background-color: red;
 }
 
+header .deseados{
+    position: absolute;
+    cursor: pointer;
+    top : 1rem;
+    right: 22.9rem;
+    
+}header .deseados i{
+    width: 25px;
+    height: 25px;    
+}
+
 
 /*----Responsive----*/
 @media only screen and (max-width: 600px){
