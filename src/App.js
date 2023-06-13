@@ -5,6 +5,7 @@ import CambiarClave from './vistas/CambiarClave';
 import Carrito from './vistas/Carrito';
 import Deseados from './vistas/Deseado';
 import { CarritoProvider } from './CarritoContext';
+import { DeseadosProvider } from './DeseadosContext';
 import CreacionTienda from './vistas/CreacionTienda';
 import CrearProducto from './vistas/crearproducto';
 import DetalleProducto from './vistas/DetalleProducto';
@@ -45,51 +46,53 @@ function App() {
   return (
     <Router>
       <CarritoProvider>
-        <UserProvider>
-          <Header
-            isLoggedIn={isLoggedIn}
-            setShowIngreso={setShowIngreso}
-            showIngreso={showIngreso}
-            handleLogout={handleLogout}
-          />
-          <Routes>
-            <Route
-              path="/ingreso"
-              element={
-                <Ingreso
-                  setIsLoggedIn={setIsLoggedIn}
-                  setShowIngreso={setShowIngreso}
-                  showIngreso={showIngreso}
-                  setUserData={setUserData}
-                />
-              }
+        <DeseadosProvider>
+          <UserProvider>
+            <Header
+              isLoggedIn={isLoggedIn}
+              setShowIngreso={setShowIngreso}
+              showIngreso={showIngreso}
+              handleLogout={handleLogout}
             />
-            <Route path="/Somos" element={<Somos />}/>
-            <Route path="/Planes" element={<Planes />} />
-            <Route path="/selector" element={<Registro />} />
-            <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
-            <Route path="/RegistroComprador" element={<RegistroComprador />} />
-            <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-            <Route path="/*" element={<PantallaInicio />} />
-            <Route path="/crearproducto" element={<CrearProducto />} />
-            <Route path="/PQRSpage" element={<PQRSPage />} />
-            <Route path="/CreacionTienda" element={<CreacionTienda />} />
-            {/* <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
+            <Routes>
+              <Route
+                path="/ingreso"
+                element={
+                  <Ingreso
+                    setIsLoggedIn={setIsLoggedIn}
+                    setShowIngreso={setShowIngreso}
+                    showIngreso={showIngreso}
+                    setUserData={setUserData}
+                  />
+                }
+              />
+              <Route path="/Somos" element={<Somos />} />
+              <Route path="/Planes" element={<Planes />} />
+              <Route path="/selector" element={<Registro />} />
+              <Route path="/RegistroVendedor" element={<RegistroVendedor />} />
+              <Route path="/RegistroComprador" element={<RegistroComprador />} />
+              <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+              <Route path="/*" element={<PantallaInicio />} />
+              <Route path="/crearproducto" element={<CrearProducto />} />
+              <Route path="/PQRSpage" element={<PQRSPage />} />
+              <Route path="/CreacionTienda" element={<CreacionTienda />} />
+              {/* <Route path="/PulidoTemplate" element={<PulidoTemplate />} />
             <Route path="/RusticoTemplate" element={<RusticoTemplate />} />
             <Route path="/TecnologicoTemplate" element={<TecnologicoTemplate />} /> */}
-            <Route path="/VistaProducto" element={<VistaProducto />} />
-            <Route path='/Perfil' element={<Perfil />} />
-            <Route path='/PantallaComprador' element={<PantallaComprador />} />
-            <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
-            <Route path="/Somos" element={<Somos />} />
-            <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
-            <Route path="/Preguntas" element={<Preguntas />} />
-            <Route path="/crearproducto" element={<CrearProducto />} />
-            <Route path="/carrito" element={<Carrito />} />
-            <Route path="/deseados" element={<Deseados />} />
-            <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
-          </Routes>
-        </UserProvider>
+              <Route path="/VistaProducto" element={<VistaProducto />} />
+              <Route path='/Perfil' element={<Perfil />} />
+              <Route path='/PantallaComprador' element={<PantallaComprador />} />
+              <Route path='/PantallaVendedor' element={<PantallaVendedor />} />
+              <Route path="/Somos" element={<Somos />} />
+              <Route path="/cambiarClave" element={<CambiarClave isLoggedIn={isLoggedIn} />} />
+              <Route path="/Preguntas" element={<Preguntas />} />
+              <Route path="/crearproducto" element={<CrearProducto />} />
+              <Route path="/carrito" element={<Carrito />} />
+              <Route path="/deseados" element={<Deseados />} />
+              <Route path="/detalleproducto/:id" element={<DetalleProducto />} />
+            </Routes>
+          </UserProvider>
+        </DeseadosProvider>
       </CarritoProvider>
     </Router>
   );
