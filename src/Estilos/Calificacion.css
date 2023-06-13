@@ -1,0 +1,14 @@
+.raiting{
+    display: flex;
+    padding-left: 10px;
+    font-size: 50px
+}
+.star{
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.star:hover,
+.star.checked{
+    color:gold;
+}

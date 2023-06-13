@@ -183,3 +183,10 @@
 .boton_carrito {
     gap: 5px;
 }
+
+.btn-deseados i{
+    cursor: pointer;
+}
+.btn-deseados i:hover{
+    color: blue;
+}

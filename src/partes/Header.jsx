@@ -6,12 +6,15 @@ import { CarritoContext } from '../CarritoContext';
 import logoLight from './../components/images/logo.png';
 import logoDark from './../components/images/logo2.png';
 import { AuthContext } from './../AuthContext';
+import { DeseadosContext } from '../DeseadosContext';
+
 
 
 const Header = ({ handleLogout, setShowIngreso, darkMode  }) => {
     const { isLoggedIn, userData } = useContext(AuthContext);
     const [showMenu, setShowMenu] = useState(false);
     const [carrito, setCarrito] = useContext(CarritoContext);
+    const [deseado, setDeseado] = useContext(DeseadosContext);
 
     const quantity = carrito.reduce((acc, curr) => {
         return acc + curr.quantity;
@@ -96,6 +99,11 @@ const Header = ({ handleLogout, setShowIngreso, darkMode  }) => {
                         <Link to="/carrito" >
                             <box-icon name="cart"></box-icon>
                             <span className="items-carrito">{quantity}</span>
+                        </Link>
+                    </div>
+                    <div className='deseados'>
+                        <Link to="/deseados" >
+                            <i class="bi bi-bookmark-star-fill"></i>
                         </Link>
                     </div>
                     <Link to="/CreacionTienda" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
